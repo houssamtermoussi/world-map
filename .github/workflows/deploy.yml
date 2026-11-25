@@ -37,10 +37,71 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Let the branch publisher finish
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pause = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+            const started = Date.now();
+            let legacy = true;
+
+            try {
+              const { data } = await github.request("GET /repos/{owner}/{repo}/pages", {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+              });
+              legacy = data.build_type !== "workflow";
+              core.info(`Pages build type: ${data.build_type}`);
+            } catch (error) {
+              core.warning(`Could not read Pages settings (${error.status || "unknown"}).`);
+            }
+
+            if (!legacy) return;
+
+            try {
+              await github.request("PUT /repos/{owner}/{repo}/pages", {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                build_type: "workflow",
+              });
+              core.info("Pages source is now GitHub Actions.");
+            } catch (error) {
+              core.warning(`Could not switch Pages to GitHub Actions (${error.status || "unknown"}).`);
+            }
+
+            while (Date.now() - started < 4 * 60 * 1000) {
+              const { data } = await github.rest.actions.listWorkflowRunsForRepo({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                head_sha: context.sha,
+                per_page: 20,
+              });
+              const run = data.workflow_runs.find(
+                (item) => item.path === "dynamic/pages/pages-build-deployment",
+              );
+              if (!run && Date.now() - started > 45000) {
+                core.info("No branch Pages build for this commit.");
+                return;
+              }
+              if (run?.status === "completed") {
+                core.info(`Branch publisher finished: ${run.conclusion}`);
+                await pause(20000);
+                return;
+              }
+              if (run) core.info(`Branch publisher status: ${run.status}`);
+              await pause(5000);
+            }
+
+            core.warning("Timed out waiting for the branch publisher.");
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
