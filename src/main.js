@@ -26,9 +26,9 @@ const LAND = [
 ];
 
 const globeSky = {
-  "sky-color": "#7eabc8",
-  "horizon-color": "#f6f1e6",
-  "sky-horizon-blend": 0.5,
+  "sky-color": "#ffffff",
+  "horizon-color": "#ffffff",
+  "sky-horizon-blend": 0,
   "atmosphere-blend": ["interpolate", ["linear"], ["zoom"], 0, 0.95, 3, 0.7, 5, 0.2],
 };
 
@@ -162,6 +162,7 @@ function setMode(next) {
   mode = next;
   globeButton.setAttribute("aria-pressed", String(next === "globe"));
   mapButton.setAttribute("aria-pressed", String(next === "map"));
+  document.body.classList.toggle("mode-globe", next === "globe");
 
   if (next === "globe") {
     map.setProjection({ type: "globe" });

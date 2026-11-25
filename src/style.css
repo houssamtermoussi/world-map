@@ -37,6 +37,11 @@ input {
   background: var(--ocean);
 }
 
+body.mode-globe,
+body.mode-globe #map {
+  background: #fff;
+}
+
 .toolbar {
   position: absolute;
   z-index: 2;
