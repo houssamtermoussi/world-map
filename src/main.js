@@ -2,6 +2,7 @@ import { Map as MapLibreMap, setWorkerUrl } from "maplibre-gl";
 import maplibreWorkerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?url";
 import "maplibre-gl/dist/maplibre-gl.css";
 import "./style.css";
+import placesEn from "./places-en.json";
 
 setWorkerUrl(maplibreWorkerUrl);
 
@@ -40,7 +41,117 @@ const flatSky = {
   "atmosphere-blend": 0,
 };
 
-const numberFormat = new Intl.NumberFormat("fr-FR");
+const COPY = {
+  fr: {
+    title: "Carte du monde",
+    search: "Rechercher un pays",
+    showMap: "Afficher la carte",
+    showGlobe: "Afficher le globe",
+    langLabel: "Passer en anglais",
+    langTitle: "English",
+    langCode: "EN",
+    north: "Nord",
+    resetNorth: "Revenir au nord",
+    close: "Fermer la fiche",
+    boot: "Chargement de la carte…",
+    bootError: "Impossible de charger la carte.",
+    loading: "Chargement des informations…",
+    missing: "Pas de fiche pour ce territoire.",
+    error: "Impossible de charger les informations.",
+    noResults: "Aucun pays trouvé",
+    flag: (name) => `Drapeau : ${name}`,
+    inhabitants: "hab.",
+    capital: "Capitale",
+    population: "Population",
+    area: "Superficie",
+    continent: "Continent",
+    region: "Région",
+    languages: "Langues",
+    currency: "Monnaie",
+    west: "O",
+    locale: "fr-FR",
+    sort: "fr",
+  },
+  en: {
+    title: "World map",
+    search: "Search for a country",
+    showMap: "Show the map",
+    showGlobe: "Show the globe",
+    langLabel: "Switch to French",
+    langTitle: "Français",
+    langCode: "FR",
+    north: "North",
+    resetNorth: "Reset to north",
+    close: "Close the panel",
+    boot: "Loading the map…",
+    bootError: "Could not load the map.",
+    loading: "Loading details…",
+    missing: "No details for this territory.",
+    error: "Could not load the details.",
+    noResults: "No country found",
+    flag: (name) => `Flag: ${name}`,
+    inhabitants: "people",
+    capital: "Capital",
+    population: "Population",
+    area: "Area",
+    continent: "Continent",
+    region: "Region",
+    languages: "Languages",
+    currency: "Currency",
+    west: "W",
+    locale: "en-US",
+    sort: "en",
+  },
+};
+
+const CONTINENTS = {
+  Afrique: "Africa",
+  "Amérique du Nord": "North America",
+  "Amérique du Sud": "South America",
+  Antarctique: "Antarctica",
+  Asie: "Asia",
+  Europe: "Europe",
+  Océan: "Ocean",
+  Océanie: "Oceania",
+};
+
+const REGIONS = {
+  "Afrique australe": "Southern Africa",
+  "Afrique centrale": "Central Africa",
+  "Afrique de l’Est": "Eastern Africa",
+  "Afrique de l’Ouest": "Western Africa",
+  "Afrique du Nord": "Northern Africa",
+  "Amérique centrale": "Central America",
+  "Amérique du Nord": "North America",
+  "Amérique du Sud": "South America",
+  Antarctique: "Antarctica",
+  "Asie centrale": "Central Asia",
+  "Asie de l’Est": "Eastern Asia",
+  "Asie de l’Ouest": "Western Asia",
+  "Asie du Sud": "Southern Asia",
+  "Asie du Sud-Est": "Southeast Asia",
+  "Australie et Nouvelle-Zélande": "Australia and New Zealand",
+  Caraïbes: "Caribbean",
+  "Europe centrale": "Central Europe",
+  "Europe de l’Est": "Eastern Europe",
+  "Europe de l’Ouest": "Western Europe",
+  "Europe du Nord": "Northern Europe",
+  "Europe du Sud": "Southern Europe",
+  "Europe du Sud-Est": "Southeast Europe",
+  Micronésie: "Micronesia",
+  Mélanésie: "Melanesia",
+  Polynésie: "Polynesia",
+};
+
+let lang = "fr";
+try {
+  const stored = localStorage.getItem("map-lang");
+  if (stored === "en" || stored === "fr") lang = stored;
+} catch {
+  lang = "fr";
+}
+let copy = COPY[lang];
+let numberFormat = new Intl.NumberFormat(copy.locale);
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const motion = (ms) => (reduceMotion ? 0 : ms);
 
@@ -50,12 +161,18 @@ const boot = document.querySelector("#boot");
 const searchInput = document.querySelector("#country-search");
 const searchResults = document.querySelector("#search-results");
 const modeButton = document.querySelector("#mode-toggle");
+const langButton = document.querySelector("#lang-toggle");
+const searchLabel = document.querySelector("label[for='country-search']");
+const compassWest = document.querySelector("#compass-west");
+const panelClose = document.querySelector("#panel-close");
 const compass = document.querySelector("#compass");
 const compassRose = document.querySelector("#compass-rose");
 
 const featuresById = new Map();
 let searchIndex = [];
 let mode = "globe";
+let panelView = null;
+let bootFailed = false;
 let hoveredId = null;
 let selectedId = null;
 let selectedFeature = null;
@@ -138,11 +255,14 @@ map.on("load", async () => {
     boot.hidden = true;
   } catch (error) {
     console.error(error);
-    boot.textContent = "Impossible de charger la carte.";
+    bootFailed = true;
+    boot.textContent = copy.bootError;
   }
 });
 
 modeButton.addEventListener("click", () => setMode(mode === "globe" ? "map" : "globe"));
+langButton.addEventListener("click", () => applyLanguage(lang === "fr" ? "en" : "fr"));
+applyLanguage(lang);
 compass.addEventListener("click", resetNorth);
 document.querySelector("#panel-close").addEventListener("click", closePanel);
 searchInput.addEventListener("input", () => showMatches(searchInput.value));
@@ -215,12 +335,45 @@ function mulberry32(seed) {
   };
 }
 
+function applyLanguage(next) {
+  lang = next === "en" ? "en" : "fr";
+  copy = COPY[lang];
+  numberFormat = new Intl.NumberFormat(copy.locale);
+  try {
+    localStorage.setItem("map-lang", lang);
+  } catch {
+    /* ignore private-mode storage failures */
+  }
+  document.documentElement.lang = lang;
+  document.title = copy.title;
+  searchLabel.textContent = copy.search;
+  searchInput.placeholder = copy.search;
+  syncModeButton();
+  langButton.textContent = copy.langCode;
+  langButton.setAttribute("aria-label", copy.langLabel);
+  langButton.title = copy.langTitle;
+  compass.setAttribute("aria-label", copy.resetNorth);
+  compass.title = copy.north;
+  compassWest.textContent = copy.west;
+  compassWest.setAttribute("x", lang === "en" ? "15" : "13");
+  panelClose.setAttribute("aria-label", copy.close);
+  if (!boot.hidden) boot.textContent = bootFailed ? copy.bootError : copy.boot;
+  if (featuresById.size) searchIndex = buildSearchIndex([...featuresById.values()]);
+  syncSearchField();
+  if (!searchResults.hidden) showMatches(searchInput.value);
+  paintPanel();
+}
+
+function syncModeButton() {
+  const label = mode === "globe" ? copy.showMap : copy.showGlobe;
+  modeButton.setAttribute("aria-label", label);
+  modeButton.title = label;
+}
+
 function setMode(next) {
   if (next === mode) return;
   mode = next;
-  const label = next === "globe" ? "Afficher la carte" : "Afficher le globe";
-  modeButton.setAttribute("aria-label", label);
-  modeButton.title = label;
+  syncModeButton();
   document.body.classList.toggle("mode-globe", next === "globe");
 
   if (next === "globe") {
@@ -391,6 +544,7 @@ async function openCountry(feature) {
 
 function closePanel() {
   requestToken += 1;
+  panelView = null;
   panel.hidden = true;
   document.body.classList.remove("panel-open");
   clearSelection();
@@ -485,24 +639,66 @@ function loadProfiles() {
 }
 
 function renderLoading(props) {
-  panelBody.replaceChildren(heading(props.NAME_FR || props.NAME), note("Chargement des informations…", "loading"));
+  panelView = { kind: "loading", props };
+  paintPanel();
 }
 
 function renderMissing(props) {
-  panelBody.replaceChildren(
-    heading(props.NAME_FR || props.NAME),
-    note("Pas de fiche pour ce territoire.", "message"),
-  );
+  panelView = { kind: "missing", props };
+  paintPanel();
 }
 
 function renderError(props) {
-  panelBody.replaceChildren(
-    heading(props.NAME_FR || props.NAME),
-    note("Impossible de charger les informations.", "message"),
-  );
+  panelView = { kind: "error", props };
+  paintPanel();
 }
 
 function renderProfile(profile) {
+  panelView = { kind: "profile", props: selectedFeature?.properties, profile };
+  paintPanel();
+}
+
+function paintPanel() {
+  if (!panelView) return;
+  const { kind, props, profile } = panelView;
+  if (kind === "loading") {
+    panelBody.replaceChildren(heading(placeName(props)), note(copy.loading, "loading"));
+    return;
+  }
+  if (kind === "missing") {
+    panelBody.replaceChildren(heading(placeName(props)), note(copy.missing, "message"));
+    return;
+  }
+  if (kind === "error") {
+    panelBody.replaceChildren(heading(placeName(props)), note(copy.error, "message"));
+    return;
+  }
+  paintProfile(localized(profile));
+}
+
+function localized(profile) {
+  if (lang !== "en") return profile;
+  const extra = placesEn[profile.id] || placesEn[profile.cca3] || {};
+  return {
+    ...profile,
+    name: extra.name || profile.name,
+    official: extra.official || profile.official,
+    continent: CONTINENTS[profile.continent] || profile.continent,
+    region: REGIONS[profile.region] || profile.region,
+    languages: extra.languages?.length ? extra.languages : profile.languages,
+    currencies: profile.currencies.map((currency) => ({
+      ...currency,
+      name: extra.currencies?.[currency.code] || currency.name,
+    })),
+  };
+}
+
+function placeName(props) {
+  if (!props) return "";
+  return lang === "en" ? props.NAME_EN || props.NAME : props.NAME_FR || props.NAME;
+}
+
+function paintProfile(profile) {
   const nodes = [heading(profile.name)];
   if (profile.official && profile.official !== profile.name) {
     nodes.push(note(profile.official, "official"));
@@ -510,7 +706,7 @@ function renderProfile(profile) {
   if (profile.flag) {
     const flag = document.createElement("img");
     flag.className = "flag";
-    flag.alt = `Drapeau : ${profile.name}`;
+    flag.alt = copy.flag(profile.name);
     flag.src = profile.flag;
     flag.addEventListener("error", () => {
       const fallback = document.createElement("p");
@@ -522,15 +718,19 @@ function renderProfile(profile) {
   }
   const facts = document.createElement("dl");
   facts.className = "facts";
-  addFact(facts, "Capitale", profile.capital.join(", "));
-  addFact(facts, "Population", profile.population ? `${numberFormat.format(profile.population)} hab.` : "");
-  addFact(facts, "Superficie", profile.area ? `${numberFormat.format(profile.area)} km²` : "");
-  addFact(facts, "Continent", profile.continent);
-  addFact(facts, "Région", profile.region);
-  addFact(facts, "Langues", profile.languages.join(", "));
+  addFact(facts, copy.capital, profile.capital.join(", "));
   addFact(
     facts,
-    "Monnaie",
+    copy.population,
+    profile.population ? `${numberFormat.format(profile.population)} ${copy.inhabitants}` : "",
+  );
+  addFact(facts, copy.area, profile.area ? `${numberFormat.format(profile.area)} km²` : "");
+  addFact(facts, copy.continent, profile.continent);
+  addFact(facts, copy.region, profile.region);
+  addFact(facts, copy.languages, profile.languages.join(", "));
+  addFact(
+    facts,
+    copy.currency,
     profile.currencies
       .map((currency) => [currency.symbol, currency.name, currency.code].filter(Boolean).join(" · "))
       .join(", "),
@@ -566,10 +766,13 @@ function buildSearchIndex(features) {
   return features
     .map((feature) => {
       const props = feature.properties;
-      const label = props.NAME_FR || props.NAME;
+      const label = labelFor(props);
+      const other = otherLabel(props);
       const aliases = [
         label,
+        other,
         props.NAME,
+        props.NAME_FR,
         props.NAME_EN,
         props.NAME_LONG,
         props.FORMAL_FR,
@@ -581,11 +784,30 @@ function buildSearchIndex(features) {
         id: feature.id,
         feature,
         label,
-        detail: props.NAME && normalize(props.NAME) !== normalize(label) ? props.NAME : "",
+        detail: other && normalize(other) !== normalize(label) ? other : "",
         aliases: [...new Set(aliases.map(normalize).filter(Boolean))],
       };
     })
-    .sort((a, b) => a.label.localeCompare(b.label, "fr"));
+    .sort((a, b) => a.label.localeCompare(b.label, copy.sort));
+}
+
+function labelFor(props) {
+  const french = props.NAME_FR || props.NAME;
+  const english = props.NAME_EN || props.NAME;
+  return lang === "en" ? english : french;
+}
+
+function otherLabel(props) {
+  const french = props.NAME_FR || props.NAME;
+  const english = props.NAME_EN || props.NAME;
+  return lang === "en" ? french : english;
+}
+
+function syncSearchField() {
+  if (!selectedFeature) return;
+  const props = selectedFeature.properties;
+  const names = [props.NAME_FR, props.NAME, props.NAME_EN].filter(Boolean);
+  if (names.includes(searchInput.value)) searchInput.value = labelFor(props);
 }
 
 function showMatches(rawQuery) {
@@ -600,7 +822,7 @@ function showMatches(rawQuery) {
   if (!matches.length) {
     const empty = document.createElement("li");
     empty.className = "empty";
-    empty.textContent = "Aucun pays trouvé";
+    empty.textContent = copy.noResults;
     searchResults.append(empty);
   } else {
     matches.forEach((entry, index) => {
@@ -639,7 +861,7 @@ function searchCountries(query) {
     }
     if (best < Infinity) ranked.push({ entry, best });
   }
-  ranked.sort((a, b) => a.best - b.best || a.entry.label.localeCompare(b.entry.label, "fr"));
+  ranked.sort((a, b) => a.best - b.best || a.entry.label.localeCompare(b.entry.label, copy.sort));
   return ranked.slice(0, 8).map((row) => row.entry);
 }
 

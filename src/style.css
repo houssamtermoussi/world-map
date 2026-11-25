@@ -48,6 +48,7 @@ body.mode-globe .boot {
 }
 
 .mode-toggle,
+.lang-toggle,
 .compass,
 .search input {
   border: 1px solid rgba(255, 255, 255, 0.78);
@@ -62,22 +63,41 @@ body.mode-globe .boot {
   backdrop-filter: blur(18px) saturate(1.5);
 }
 
-.mode-toggle,
-.compass {
+.controls {
   position: absolute;
   z-index: 2;
+  top: 16px;
+  left: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.mode-toggle,
+.lang-toggle,
+.compass {
   cursor: pointer;
 }
 
-.mode-toggle {
-  top: 16px;
-  left: 16px;
+.compass {
+  position: absolute;
+  z-index: 2;
+}
+
+.mode-toggle,
+.lang-toggle {
   display: grid;
   place-items: center;
+  flex: none;
   width: 46px;
   height: 46px;
   border-radius: 50%;
   padding: 0;
+}
+
+.lang-toggle {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
 .search {
@@ -145,11 +165,12 @@ body.mode-globe .boot {
 }
 
 body.panel-open .search {
-  left: calc((100vw - 372px) / 2);
-  width: min(420px, calc(100vw - 520px));
+  left: calc((100vw - 248px) / 2);
+  width: min(420px, calc(100vw - 540px));
 }
 
 .mode-toggle:hover,
+.lang-toggle:hover,
 .compass:hover,
 .search input:hover {
   background:
@@ -174,6 +195,7 @@ body:not(.mode-globe) .mode-toggle .icon-map {
 
 .search input:focus,
 .mode-toggle:focus-visible,
+.lang-toggle:focus-visible,
 .compass:focus-visible,
 .panel-bar button:focus-visible,
 .result button:focus-visible {
@@ -371,7 +393,7 @@ body.panel-open .maplibregl-ctrl-bottom-right {
 }
 
 @media (max-width: 760px) {
-  .mode-toggle {
+  .controls {
     top: 12px;
     left: 12px;
   }
@@ -380,7 +402,7 @@ body.panel-open .maplibregl-ctrl-bottom-right {
   body.panel-open .search {
     top: 12px;
     right: 12px;
-    left: 70px;
+    left: 122px;
     width: auto;
     translate: none;
   }

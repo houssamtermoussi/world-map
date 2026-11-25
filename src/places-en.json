@@ -1,0 +1,2669 @@
+{
+  "ABW": {
+    "name": "Aruba",
+    "official": "Aruba",
+    "languages": [
+      "Dutch",
+      "Papiamento"
+    ],
+    "currencies": {
+      "AWG": "Aruban florin"
+    }
+  },
+  "AFG": {
+    "name": "Afghanistan",
+    "official": "Islamic Republic of Afghanistan",
+    "languages": [
+      "Dari",
+      "Pashto",
+      "Turkmen"
+    ],
+    "currencies": {
+      "AFN": "Afghan afghani"
+    }
+  },
+  "AGO": {
+    "name": "Angola",
+    "official": "Republic of Angola",
+    "languages": [
+      "Portuguese"
+    ],
+    "currencies": {
+      "AOA": "Angolan kwanza"
+    }
+  },
+  "AIA": {
+    "name": "Anguilla",
+    "official": "Anguilla",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "XCD": "Eastern Caribbean dollar"
+    }
+  },
+  "ALD": {
+    "name": "Åland Islands",
+    "official": "Åland Islands",
+    "languages": [
+      "Swedish"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "ALB": {
+    "name": "Albania",
+    "official": "Republic of Albania",
+    "languages": [
+      "Albanian"
+    ],
+    "currencies": {
+      "ALL": "Albanian lek"
+    }
+  },
+  "AND": {
+    "name": "Andorra",
+    "official": "Principality of Andorra",
+    "languages": [
+      "Catalan"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "ARE": {
+    "name": "United Arab Emirates",
+    "official": "United Arab Emirates",
+    "languages": [
+      "Arabic"
+    ],
+    "currencies": {
+      "AED": "United Arab Emirates dirham"
+    }
+  },
+  "ARG": {
+    "name": "Argentina",
+    "official": "Argentine Republic",
+    "languages": [
+      "Guaraní",
+      "Spanish"
+    ],
+    "currencies": {
+      "ARS": "Argentine peso"
+    }
+  },
+  "ARM": {
+    "name": "Armenia",
+    "official": "Republic of Armenia",
+    "languages": [
+      "Armenian"
+    ],
+    "currencies": {
+      "AMD": "Armenian dram"
+    }
+  },
+  "ASM": {
+    "name": "American Samoa",
+    "official": "American Samoa",
+    "languages": [
+      "English",
+      "Samoan"
+    ],
+    "currencies": {
+      "USD": "United States dollar"
+    }
+  },
+  "ATA": {
+    "name": "Antarctica",
+    "official": "Antarctica",
+    "languages": [],
+    "currencies": {}
+  },
+  "ATF": {
+    "name": "French Southern and Antarctic Lands",
+    "official": "Territory of the French Southern and Antarctic Lands",
+    "languages": [
+      "French"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "ATG": {
+    "name": "Antigua and Barbuda",
+    "official": "Antigua and Barbuda",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "XCD": "Eastern Caribbean dollar"
+    }
+  },
+  "AUS": {
+    "name": "Australia",
+    "official": "Commonwealth of Australia",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "AUD": "Australian dollar"
+    }
+  },
+  "AUT": {
+    "name": "Austria",
+    "official": "Republic of Austria",
+    "languages": [
+      "Austro-Bavarian German"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "AZE": {
+    "name": "Azerbaijan",
+    "official": "Republic of Azerbaijan",
+    "languages": [
+      "Azerbaijani",
+      "Russian"
+    ],
+    "currencies": {
+      "AZN": "Azerbaijani manat"
+    }
+  },
+  "BDI": {
+    "name": "Burundi",
+    "official": "Republic of Burundi",
+    "languages": [
+      "French",
+      "Kirundi"
+    ],
+    "currencies": {
+      "BIF": "Burundian franc"
+    }
+  },
+  "BEL": {
+    "name": "Belgium",
+    "official": "Kingdom of Belgium",
+    "languages": [
+      "German",
+      "French",
+      "Dutch"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "BEN": {
+    "name": "Benin",
+    "official": "Republic of Benin",
+    "languages": [
+      "French"
+    ],
+    "currencies": {
+      "XOF": "West African CFA franc"
+    }
+  },
+  "BFA": {
+    "name": "Burkina Faso",
+    "official": "Burkina Faso",
+    "languages": [
+      "French"
+    ],
+    "currencies": {
+      "XOF": "West African CFA franc"
+    }
+  },
+  "BGD": {
+    "name": "Bangladesh",
+    "official": "People's Republic of Bangladesh",
+    "languages": [
+      "Bengali"
+    ],
+    "currencies": {
+      "BDT": "Bangladeshi taka"
+    }
+  },
+  "BGR": {
+    "name": "Bulgaria",
+    "official": "Republic of Bulgaria",
+    "languages": [
+      "Bulgarian"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "BHR": {
+    "name": "Bahrain",
+    "official": "Kingdom of Bahrain",
+    "languages": [
+      "Arabic"
+    ],
+    "currencies": {
+      "BHD": "Bahraini dinar"
+    }
+  },
+  "BHS": {
+    "name": "Bahamas",
+    "official": "Commonwealth of the Bahamas",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "BSD": "Bahamian dollar",
+      "USD": "United States dollar"
+    }
+  },
+  "BIH": {
+    "name": "Bosnia and Herzegovina",
+    "official": "Bosnia and Herzegovina",
+    "languages": [
+      "Bosnian",
+      "Croatian",
+      "Serbian"
+    ],
+    "currencies": {
+      "BAM": "Bosnia and Herzegovina convertible mark"
+    }
+  },
+  "BLM": {
+    "name": "Saint Barthélemy",
+    "official": "Collectivity of Saint Barthélemy",
+    "languages": [
+      "French"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "SHN": {
+    "name": "Saint Helena, Ascension and Tristan da Cunha",
+    "official": "Saint Helena, Ascension and Tristan da Cunha",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "GBP": "Pound sterling",
+      "SHP": "Saint Helena pound"
+    }
+  },
+  "BLR": {
+    "name": "Belarus",
+    "official": "Republic of Belarus",
+    "languages": [
+      "Belarusian",
+      "Russian"
+    ],
+    "currencies": {
+      "BYN": "Belarusian ruble"
+    }
+  },
+  "BLZ": {
+    "name": "Belize",
+    "official": "Belize",
+    "languages": [
+      "Belizean Creole",
+      "English",
+      "Spanish"
+    ],
+    "currencies": {
+      "BZD": "Belize dollar"
+    }
+  },
+  "BMU": {
+    "name": "Bermuda",
+    "official": "Bermuda",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "BMD": "Bermudian dollar"
+    }
+  },
+  "BOL": {
+    "name": "Bolivia",
+    "official": "Plurinational State of Bolivia",
+    "languages": [
+      "Aymara",
+      "Guaraní",
+      "Quechua",
+      "Spanish"
+    ],
+    "currencies": {
+      "BOB": "Bolivian boliviano"
+    }
+  },
+  "BES": {
+    "name": "Caribbean Netherlands",
+    "official": "Bonaire, Sint Eustatius and Saba",
+    "languages": [
+      "English",
+      "Dutch",
+      "Papiamento"
+    ],
+    "currencies": {
+      "USD": "United States dollar"
+    }
+  },
+  "BRA": {
+    "name": "Brazil",
+    "official": "Federative Republic of Brazil",
+    "languages": [
+      "Portuguese"
+    ],
+    "currencies": {
+      "BRL": "Brazilian real"
+    }
+  },
+  "BRB": {
+    "name": "Barbados",
+    "official": "Barbados",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "BBD": "Barbadian dollar"
+    }
+  },
+  "BRN": {
+    "name": "Brunei",
+    "official": "Nation of Brunei, Abode of Peace",
+    "languages": [
+      "Malay"
+    ],
+    "currencies": {
+      "BND": "Brunei dollar",
+      "SGD": "Singapore dollar"
+    }
+  },
+  "BTN": {
+    "name": "Bhutan",
+    "official": "Kingdom of Bhutan",
+    "languages": [
+      "Dzongkha"
+    ],
+    "currencies": {
+      "BTN": "Bhutanese ngultrum",
+      "INR": "Indian rupee"
+    }
+  },
+  "BVT": {
+    "name": "Bouvet Island",
+    "official": "Bouvet Island",
+    "languages": [
+      "Norwegian"
+    ],
+    "currencies": {}
+  },
+  "BWA": {
+    "name": "Botswana",
+    "official": "Republic of Botswana",
+    "languages": [
+      "English",
+      "Tswana"
+    ],
+    "currencies": {
+      "BWP": "Botswana pula"
+    }
+  },
+  "CAF": {
+    "name": "Central African Republic",
+    "official": "Central African Republic",
+    "languages": [
+      "French",
+      "Sango"
+    ],
+    "currencies": {
+      "XAF": "Central African CFA franc"
+    }
+  },
+  "CAN": {
+    "name": "Canada",
+    "official": "Canada",
+    "languages": [
+      "English",
+      "French"
+    ],
+    "currencies": {
+      "CAD": "Canadian dollar"
+    }
+  },
+  "CCK": {
+    "name": "Cocos (Keeling) Islands",
+    "official": "Territory of the Cocos (Keeling) Islands",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "AUD": "Australian dollar"
+    }
+  },
+  "CHE": {
+    "name": "Switzerland",
+    "official": "Swiss Confederation",
+    "languages": [
+      "French",
+      "Swiss German",
+      "Italian",
+      "Romansh"
+    ],
+    "currencies": {
+      "CHF": "Swiss franc"
+    }
+  },
+  "CHL": {
+    "name": "Chile",
+    "official": "Republic of Chile",
+    "languages": [
+      "Spanish"
+    ],
+    "currencies": {
+      "CLP": "Chilean peso"
+    }
+  },
+  "CHN": {
+    "name": "China",
+    "official": "People's Republic of China",
+    "languages": [
+      "Chinese"
+    ],
+    "currencies": {
+      "CNY": "Chinese yuan"
+    }
+  },
+  "CIV": {
+    "name": "Ivory Coast",
+    "official": "Republic of Côte d'Ivoire",
+    "languages": [
+      "French"
+    ],
+    "currencies": {
+      "XOF": "West African CFA franc"
+    }
+  },
+  "CMR": {
+    "name": "Cameroon",
+    "official": "Republic of Cameroon",
+    "languages": [
+      "English",
+      "French"
+    ],
+    "currencies": {
+      "XAF": "Central African CFA franc"
+    }
+  },
+  "COD": {
+    "name": "DR Congo",
+    "official": "Democratic Republic of the Congo",
+    "languages": [
+      "French",
+      "Kikongo",
+      "Lingala",
+      "Tshiluba",
+      "Swahili"
+    ],
+    "currencies": {
+      "CDF": "Congolese franc"
+    }
+  },
+  "COG": {
+    "name": "Congo",
+    "official": "Republic of the Congo",
+    "languages": [
+      "French",
+      "Kikongo",
+      "Lingala"
+    ],
+    "currencies": {
+      "XAF": "Central African CFA franc"
+    }
+  },
+  "COK": {
+    "name": "Cook Islands",
+    "official": "Cook Islands",
+    "languages": [
+      "English",
+      "Cook Islands Māori"
+    ],
+    "currencies": {
+      "CKD": "Cook Islands dollar",
+      "NZD": "New Zealand dollar"
+    }
+  },
+  "COL": {
+    "name": "Colombia",
+    "official": "Republic of Colombia",
+    "languages": [
+      "Spanish"
+    ],
+    "currencies": {
+      "COP": "Colombian peso"
+    }
+  },
+  "COM": {
+    "name": "Comoros",
+    "official": "Union of the Comoros",
+    "languages": [
+      "Arabic",
+      "French",
+      "Comorian"
+    ],
+    "currencies": {
+      "KMF": "Comorian franc"
+    }
+  },
+  "CPV": {
+    "name": "Cape Verde",
+    "official": "Republic of Cabo Verde",
+    "languages": [
+      "Portuguese"
+    ],
+    "currencies": {
+      "CVE": "Cape Verdean escudo"
+    }
+  },
+  "CRI": {
+    "name": "Costa Rica",
+    "official": "Republic of Costa Rica",
+    "languages": [
+      "Spanish"
+    ],
+    "currencies": {
+      "CRC": "Costa Rican colón"
+    }
+  },
+  "CUB": {
+    "name": "Cuba",
+    "official": "Republic of Cuba",
+    "languages": [
+      "Spanish"
+    ],
+    "currencies": {
+      "CUP": "Cuban peso"
+    }
+  },
+  "CUW": {
+    "name": "Curaçao",
+    "official": "Country of Curaçao",
+    "languages": [
+      "English",
+      "Dutch",
+      "Papiamento"
+    ],
+    "currencies": {
+      "XCG": "Caribbean guilder"
+    }
+  },
+  "CXR": {
+    "name": "Christmas Island",
+    "official": "Territory of Christmas Island",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "AUD": "Australian dollar"
+    }
+  },
+  "CYM": {
+    "name": "Cayman Islands",
+    "official": "Cayman Islands",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "KYD": "Cayman Islands dollar"
+    }
+  },
+  "CYP": {
+    "name": "Cyprus",
+    "official": "Republic of Cyprus",
+    "languages": [
+      "Greek",
+      "Turkish"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "CZE": {
+    "name": "Czechia",
+    "official": "Czech Republic",
+    "languages": [
+      "Czech",
+      "Slovak"
+    ],
+    "currencies": {
+      "CZK": "Czech koruna"
+    }
+  },
+  "DEU": {
+    "name": "Germany",
+    "official": "Federal Republic of Germany",
+    "languages": [
+      "German"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "DJI": {
+    "name": "Djibouti",
+    "official": "Republic of Djibouti",
+    "languages": [
+      "Arabic",
+      "French"
+    ],
+    "currencies": {
+      "DJF": "Djiboutian franc"
+    }
+  },
+  "DMA": {
+    "name": "Dominica",
+    "official": "Commonwealth of Dominica",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "XCD": "Eastern Caribbean dollar"
+    }
+  },
+  "DNK": {
+    "name": "Denmark",
+    "official": "Kingdom of Denmark",
+    "languages": [
+      "Danish"
+    ],
+    "currencies": {
+      "DKK": "Danish krone"
+    }
+  },
+  "DOM": {
+    "name": "Dominican Republic",
+    "official": "Dominican Republic",
+    "languages": [
+      "Spanish"
+    ],
+    "currencies": {
+      "DOP": "Dominican peso"
+    }
+  },
+  "DZA": {
+    "name": "Algeria",
+    "official": "People's Democratic Republic of Algeria",
+    "languages": [
+      "Arabic"
+    ],
+    "currencies": {
+      "DZD": "Algerian dinar"
+    }
+  },
+  "ECU": {
+    "name": "Ecuador",
+    "official": "Republic of Ecuador",
+    "languages": [
+      "Spanish"
+    ],
+    "currencies": {
+      "USD": "United States dollar"
+    }
+  },
+  "EGY": {
+    "name": "Egypt",
+    "official": "Arab Republic of Egypt",
+    "languages": [
+      "Arabic"
+    ],
+    "currencies": {
+      "EGP": "Egyptian pound"
+    }
+  },
+  "ERI": {
+    "name": "Eritrea",
+    "official": "State of Eritrea",
+    "languages": [
+      "Arabic",
+      "English",
+      "Tigrinya"
+    ],
+    "currencies": {
+      "ERN": "Eritrean nakfa"
+    }
+  },
+  "ESP": {
+    "name": "Spain",
+    "official": "Kingdom of Spain",
+    "languages": [
+      "Spanish"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "EST": {
+    "name": "Estonia",
+    "official": "Republic of Estonia",
+    "languages": [
+      "Estonian"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "ETH": {
+    "name": "Ethiopia",
+    "official": "Federal Democratic Republic of Ethiopia",
+    "languages": [
+      "Amharic"
+    ],
+    "currencies": {
+      "ETB": "Ethiopian birr"
+    }
+  },
+  "FIN": {
+    "name": "Finland",
+    "official": "Republic of Finland",
+    "languages": [
+      "Finnish",
+      "Swedish"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "FJI": {
+    "name": "Fiji",
+    "official": "Republic of Fiji",
+    "languages": [
+      "English",
+      "Fijian",
+      "Fiji Hindi"
+    ],
+    "currencies": {
+      "FJD": "Fijian dollar"
+    }
+  },
+  "FLK": {
+    "name": "Falkland Islands",
+    "official": "Falkland Islands",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "FKP": "Falkland Islands pound"
+    }
+  },
+  "FRA": {
+    "name": "France",
+    "official": "French Republic",
+    "languages": [
+      "French"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "FRO": {
+    "name": "Faroe Islands",
+    "official": "Faroe Islands",
+    "languages": [
+      "Danish",
+      "Faroese"
+    ],
+    "currencies": {
+      "DKK": "Danish krone",
+      "FOK": "Faroese króna"
+    }
+  },
+  "FSM": {
+    "name": "Micronesia",
+    "official": "Federated States of Micronesia",
+    "languages": [
+      "English"
+    ],
+    "currencies": {}
+  },
+  "GAB": {
+    "name": "Gabon",
+    "official": "Gabonese Republic",
+    "languages": [
+      "French"
+    ],
+    "currencies": {
+      "XAF": "Central African CFA franc"
+    }
+  },
+  "GBR": {
+    "name": "United Kingdom",
+    "official": "United Kingdom of Great Britain and Northern Ireland",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "GBP": "British pound"
+    }
+  },
+  "GEO": {
+    "name": "Georgia",
+    "official": "Georgia",
+    "languages": [
+      "Georgian"
+    ],
+    "currencies": {
+      "GEL": "lari"
+    }
+  },
+  "GGY": {
+    "name": "Guernsey",
+    "official": "Bailiwick of Guernsey",
+    "languages": [
+      "English",
+      "French",
+      "Guernésiais"
+    ],
+    "currencies": {
+      "GBP": "British pound",
+      "GGP": "Guernsey pound"
+    }
+  },
+  "GHA": {
+    "name": "Ghana",
+    "official": "Republic of Ghana",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "GHS": "Ghanaian cedi"
+    }
+  },
+  "GIB": {
+    "name": "Gibraltar",
+    "official": "Gibraltar",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "GIP": "Gibraltar pound"
+    }
+  },
+  "GIN": {
+    "name": "Guinea",
+    "official": "Republic of Guinea",
+    "languages": [
+      "French"
+    ],
+    "currencies": {
+      "GNF": "Guinean franc"
+    }
+  },
+  "GLP": {
+    "name": "Guadeloupe",
+    "official": "Guadeloupe",
+    "languages": [
+      "French"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "GMB": {
+    "name": "Gambia",
+    "official": "Republic of the Gambia",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "GMD": "dalasi"
+    }
+  },
+  "GNB": {
+    "name": "Guinea-Bissau",
+    "official": "Republic of Guinea-Bissau",
+    "languages": [
+      "Portuguese",
+      "Upper Guinea Creole"
+    ],
+    "currencies": {
+      "XOF": "West African CFA franc"
+    }
+  },
+  "GNQ": {
+    "name": "Equatorial Guinea",
+    "official": "Republic of Equatorial Guinea",
+    "languages": [
+      "French",
+      "Portuguese",
+      "Spanish"
+    ],
+    "currencies": {
+      "XAF": "Central African CFA franc"
+    }
+  },
+  "GRC": {
+    "name": "Greece",
+    "official": "Hellenic Republic",
+    "languages": [
+      "Greek"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "GRD": {
+    "name": "Grenada",
+    "official": "Grenada",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "XCD": "Eastern Caribbean dollar"
+    }
+  },
+  "GRL": {
+    "name": "Greenland",
+    "official": "Greenland",
+    "languages": [
+      "Greenlandic"
+    ],
+    "currencies": {
+      "DKK": "krone"
+    }
+  },
+  "GTM": {
+    "name": "Guatemala",
+    "official": "Republic of Guatemala",
+    "languages": [
+      "Spanish"
+    ],
+    "currencies": {
+      "GTQ": "Guatemalan quetzal"
+    }
+  },
+  "GUF": {
+    "name": "French Guiana",
+    "official": "Guiana",
+    "languages": [
+      "French"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "GUM": {
+    "name": "Guam",
+    "official": "Guam",
+    "languages": [
+      "Chamorro",
+      "English",
+      "Spanish"
+    ],
+    "currencies": {
+      "USD": "United States dollar"
+    }
+  },
+  "GUY": {
+    "name": "Guyana",
+    "official": "Co-operative Republic of Guyana",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "GYD": "Guyanese dollar"
+    }
+  },
+  "HKG": {
+    "name": "Hong Kong",
+    "official": "Hong Kong Special Administrative Region of the People's Republic of China",
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "currencies": {
+      "HKD": "Hong Kong dollar"
+    }
+  },
+  "HMD": {
+    "name": "Heard Island and McDonald Islands",
+    "official": "Heard Island and McDonald Islands",
+    "languages": [
+      "English"
+    ],
+    "currencies": {}
+  },
+  "HND": {
+    "name": "Honduras",
+    "official": "Republic of Honduras",
+    "languages": [
+      "Spanish"
+    ],
+    "currencies": {
+      "HNL": "Honduran lempira"
+    }
+  },
+  "HRV": {
+    "name": "Croatia",
+    "official": "Republic of Croatia",
+    "languages": [
+      "Croatian"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "HTI": {
+    "name": "Haiti",
+    "official": "Republic of Haiti",
+    "languages": [
+      "French",
+      "Haitian Creole"
+    ],
+    "currencies": {
+      "HTG": "Haitian gourde"
+    }
+  },
+  "HUN": {
+    "name": "Hungary",
+    "official": "Hungary",
+    "languages": [
+      "Hungarian"
+    ],
+    "currencies": {
+      "HUF": "Hungarian forint"
+    }
+  },
+  "IDN": {
+    "name": "Indonesia",
+    "official": "Republic of Indonesia",
+    "languages": [
+      "Indonesian"
+    ],
+    "currencies": {
+      "IDR": "Indonesian rupiah"
+    }
+  },
+  "IMN": {
+    "name": "Isle of Man",
+    "official": "Isle of Man",
+    "languages": [
+      "English",
+      "Manx"
+    ],
+    "currencies": {
+      "GBP": "British pound",
+      "IMP": "Manx pound"
+    }
+  },
+  "IND": {
+    "name": "India",
+    "official": "Republic of India",
+    "languages": [
+      "English",
+      "Hindi",
+      "Tamil"
+    ],
+    "currencies": {
+      "INR": "Indian rupee"
+    }
+  },
+  "IOT": {
+    "name": "British Indian Ocean Territory",
+    "official": "British Indian Ocean Territory",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "USD": "United States dollar"
+    }
+  },
+  "IRL": {
+    "name": "Ireland",
+    "official": "Republic of Ireland",
+    "languages": [
+      "English",
+      "Irish"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "IRN": {
+    "name": "Iran",
+    "official": "Islamic Republic of Iran",
+    "languages": [
+      "Persian (Farsi)"
+    ],
+    "currencies": {
+      "IRR": "Iranian rial"
+    }
+  },
+  "IRQ": {
+    "name": "Iraq",
+    "official": "Republic of Iraq",
+    "languages": [
+      "Arabic",
+      "Aramaic",
+      "Sorani"
+    ],
+    "currencies": {
+      "IQD": "Iraqi dinar"
+    }
+  },
+  "ISL": {
+    "name": "Iceland",
+    "official": "Iceland",
+    "languages": [
+      "Icelandic"
+    ],
+    "currencies": {
+      "ISK": "Icelandic króna"
+    }
+  },
+  "ISR": {
+    "name": "Israel",
+    "official": "State of Israel",
+    "languages": [
+      "Arabic",
+      "Hebrew"
+    ],
+    "currencies": {
+      "ILS": "Israeli new shekel"
+    }
+  },
+  "ITA": {
+    "name": "Italy",
+    "official": "Italian Republic",
+    "languages": [
+      "Italian"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "JAM": {
+    "name": "Jamaica",
+    "official": "Jamaica",
+    "languages": [
+      "English",
+      "Jamaican Patois"
+    ],
+    "currencies": {
+      "JMD": "Jamaican dollar"
+    }
+  },
+  "JEY": {
+    "name": "Jersey",
+    "official": "Bailiwick of Jersey",
+    "languages": [
+      "English",
+      "French",
+      "Jèrriais"
+    ],
+    "currencies": {
+      "GBP": "British pound",
+      "JEP": "Jersey pound"
+    }
+  },
+  "JOR": {
+    "name": "Jordan",
+    "official": "Hashemite Kingdom of Jordan",
+    "languages": [
+      "Arabic"
+    ],
+    "currencies": {
+      "JOD": "Jordanian dinar"
+    }
+  },
+  "JPN": {
+    "name": "Japan",
+    "official": "Japan",
+    "languages": [
+      "Japanese"
+    ],
+    "currencies": {
+      "JPY": "Japanese yen"
+    }
+  },
+  "KAZ": {
+    "name": "Kazakhstan",
+    "official": "Republic of Kazakhstan",
+    "languages": [
+      "Kazakh",
+      "Russian"
+    ],
+    "currencies": {
+      "KZT": "Kazakhstani tenge"
+    }
+  },
+  "KEN": {
+    "name": "Kenya",
+    "official": "Republic of Kenya",
+    "languages": [
+      "English",
+      "Swahili"
+    ],
+    "currencies": {
+      "KES": "Kenyan shilling"
+    }
+  },
+  "KGZ": {
+    "name": "Kyrgyzstan",
+    "official": "Kyrgyz Republic",
+    "languages": [
+      "Kyrgyz",
+      "Russian"
+    ],
+    "currencies": {
+      "KGS": "Kyrgyzstani som"
+    }
+  },
+  "KHM": {
+    "name": "Cambodia",
+    "official": "Kingdom of Cambodia",
+    "languages": [
+      "Khmer"
+    ],
+    "currencies": {
+      "KHR": "Cambodian riel",
+      "USD": "United States dollar"
+    }
+  },
+  "KIR": {
+    "name": "Kiribati",
+    "official": "Independent and Sovereign Republic of Kiribati",
+    "languages": [
+      "English",
+      "Gilbertese"
+    ],
+    "currencies": {
+      "AUD": "Australian dollar",
+      "KID": "Kiribati dollar"
+    }
+  },
+  "KNA": {
+    "name": "Saint Kitts and Nevis",
+    "official": "Federation of Saint Christopher and Nevis",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "XCD": "Eastern Caribbean dollar"
+    }
+  },
+  "KOR": {
+    "name": "South Korea",
+    "official": "Republic of Korea",
+    "languages": [
+      "Korean"
+    ],
+    "currencies": {
+      "KRW": "South Korean won"
+    }
+  },
+  "KOS": {
+    "name": "Kosovo",
+    "official": "Republic of Kosovo",
+    "languages": [
+      "Albanian",
+      "Serbian"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "KWT": {
+    "name": "Kuwait",
+    "official": "State of Kuwait",
+    "languages": [
+      "Arabic"
+    ],
+    "currencies": {
+      "KWD": "Kuwaiti dinar"
+    }
+  },
+  "LAO": {
+    "name": "Laos",
+    "official": "Lao People's Democratic Republic",
+    "languages": [
+      "Lao"
+    ],
+    "currencies": {
+      "LAK": "Lao kip"
+    }
+  },
+  "LBN": {
+    "name": "Lebanon",
+    "official": "Lebanese Republic",
+    "languages": [
+      "Arabic",
+      "French"
+    ],
+    "currencies": {
+      "LBP": "Lebanese pound"
+    }
+  },
+  "LBR": {
+    "name": "Liberia",
+    "official": "Republic of Liberia",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "LRD": "Liberian dollar"
+    }
+  },
+  "LBY": {
+    "name": "Libya",
+    "official": "State of Libya",
+    "languages": [
+      "Arabic"
+    ],
+    "currencies": {
+      "LYD": "Libyan dinar"
+    }
+  },
+  "LCA": {
+    "name": "Saint Lucia",
+    "official": "Saint Lucia",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "XCD": "Eastern Caribbean dollar"
+    }
+  },
+  "LIE": {
+    "name": "Liechtenstein",
+    "official": "Principality of Liechtenstein",
+    "languages": [
+      "German"
+    ],
+    "currencies": {
+      "CHF": "Swiss franc"
+    }
+  },
+  "LKA": {
+    "name": "Sri Lanka",
+    "official": "Democratic Socialist Republic of Sri Lanka",
+    "languages": [
+      "Sinhala",
+      "Tamil"
+    ],
+    "currencies": {
+      "LKR": "Sri Lankan rupee"
+    }
+  },
+  "LSO": {
+    "name": "Lesotho",
+    "official": "Kingdom of Lesotho",
+    "languages": [
+      "English",
+      "Sotho"
+    ],
+    "currencies": {
+      "LSL": "Lesotho loti",
+      "ZAR": "South African rand"
+    }
+  },
+  "LTU": {
+    "name": "Lithuania",
+    "official": "Republic of Lithuania",
+    "languages": [
+      "Lithuanian"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "LUX": {
+    "name": "Luxembourg",
+    "official": "Grand Duchy of Luxembourg",
+    "languages": [
+      "German",
+      "French",
+      "Luxembourgish"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "LVA": {
+    "name": "Latvia",
+    "official": "Republic of Latvia",
+    "languages": [
+      "Latvian"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "MAC": {
+    "name": "Macau",
+    "official": "Macao Special Administrative Region of the People's Republic of China",
+    "languages": [
+      "Portuguese",
+      "Chinese"
+    ],
+    "currencies": {
+      "MOP": "Macanese pataca"
+    }
+  },
+  "MAF": {
+    "name": "Saint Martin",
+    "official": "Saint Martin",
+    "languages": [
+      "French"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "MAR": {
+    "name": "Morocco",
+    "official": "Kingdom of Morocco",
+    "languages": [
+      "Arabic",
+      "Berber"
+    ],
+    "currencies": {
+      "MAD": "Moroccan dirham"
+    }
+  },
+  "MCO": {
+    "name": "Monaco",
+    "official": "Principality of Monaco",
+    "languages": [
+      "French"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "MDA": {
+    "name": "Moldova",
+    "official": "Republic of Moldova",
+    "languages": [
+      "Moldavian"
+    ],
+    "currencies": {
+      "MDL": "Moldovan leu"
+    }
+  },
+  "MDG": {
+    "name": "Madagascar",
+    "official": "Republic of Madagascar",
+    "languages": [
+      "French",
+      "Malagasy"
+    ],
+    "currencies": {
+      "MGA": "Malagasy ariary"
+    }
+  },
+  "MDV": {
+    "name": "Maldives",
+    "official": "Republic of the Maldives",
+    "languages": [
+      "Maldivian"
+    ],
+    "currencies": {
+      "MVR": "Maldivian rufiyaa"
+    }
+  },
+  "MEX": {
+    "name": "Mexico",
+    "official": "United Mexican States",
+    "languages": [
+      "Spanish"
+    ],
+    "currencies": {
+      "MXN": "Mexican peso"
+    }
+  },
+  "MHL": {
+    "name": "Marshall Islands",
+    "official": "Republic of the Marshall Islands",
+    "languages": [
+      "English",
+      "Marshallese"
+    ],
+    "currencies": {
+      "USD": "United States dollar"
+    }
+  },
+  "MKD": {
+    "name": "North Macedonia",
+    "official": "Republic of North Macedonia",
+    "languages": [
+      "Macedonian"
+    ],
+    "currencies": {
+      "MKD": "denar"
+    }
+  },
+  "MLI": {
+    "name": "Mali",
+    "official": "Republic of Mali",
+    "languages": [
+      "French"
+    ],
+    "currencies": {
+      "XOF": "West African CFA franc"
+    }
+  },
+  "MLT": {
+    "name": "Malta",
+    "official": "Republic of Malta",
+    "languages": [
+      "English",
+      "Maltese"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "MMR": {
+    "name": "Myanmar",
+    "official": "Republic of the Union of Myanmar",
+    "languages": [
+      "Burmese"
+    ],
+    "currencies": {
+      "MMK": "Burmese kyat"
+    }
+  },
+  "MNE": {
+    "name": "Montenegro",
+    "official": "Montenegro",
+    "languages": [
+      "Montenegrin"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "MNG": {
+    "name": "Mongolia",
+    "official": "Mongolia",
+    "languages": [
+      "Mongolian"
+    ],
+    "currencies": {
+      "MNT": "Mongolian tögrög"
+    }
+  },
+  "MNP": {
+    "name": "Northern Mariana Islands",
+    "official": "Commonwealth of the Northern Mariana Islands",
+    "languages": [
+      "Carolinian",
+      "Chamorro",
+      "English"
+    ],
+    "currencies": {
+      "USD": "United States dollar"
+    }
+  },
+  "MOZ": {
+    "name": "Mozambique",
+    "official": "Republic of Mozambique",
+    "languages": [
+      "Portuguese"
+    ],
+    "currencies": {
+      "MZN": "Mozambican metical"
+    }
+  },
+  "MRT": {
+    "name": "Mauritania",
+    "official": "Islamic Republic of Mauritania",
+    "languages": [
+      "Arabic"
+    ],
+    "currencies": {
+      "MRU": "Mauritanian ouguiya"
+    }
+  },
+  "MSR": {
+    "name": "Montserrat",
+    "official": "Montserrat",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "XCD": "Eastern Caribbean dollar"
+    }
+  },
+  "MTQ": {
+    "name": "Martinique",
+    "official": "Martinique",
+    "languages": [
+      "French"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "MUS": {
+    "name": "Mauritius",
+    "official": "Republic of Mauritius",
+    "languages": [
+      "English",
+      "French",
+      "Mauritian Creole"
+    ],
+    "currencies": {
+      "MUR": "Mauritian rupee"
+    }
+  },
+  "MWI": {
+    "name": "Malawi",
+    "official": "Republic of Malawi",
+    "languages": [
+      "English",
+      "Chewa"
+    ],
+    "currencies": {
+      "MWK": "Malawian kwacha"
+    }
+  },
+  "MYS": {
+    "name": "Malaysia",
+    "official": "Malaysia",
+    "languages": [
+      "English",
+      "Malay"
+    ],
+    "currencies": {
+      "MYR": "Malaysian ringgit"
+    }
+  },
+  "MYT": {
+    "name": "Mayotte",
+    "official": "Department of Mayotte",
+    "languages": [
+      "French"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "NAM": {
+    "name": "Namibia",
+    "official": "Republic of Namibia",
+    "languages": [
+      "Afrikaans",
+      "German",
+      "English",
+      "Herero",
+      "Khoekhoe",
+      "Kwangali",
+      "Lozi",
+      "Ndonga",
+      "Tswana"
+    ],
+    "currencies": {
+      "NAD": "Namibian dollar",
+      "ZAR": "South African rand"
+    }
+  },
+  "NCL": {
+    "name": "New Caledonia",
+    "official": "New Caledonia",
+    "languages": [
+      "French"
+    ],
+    "currencies": {
+      "XPF": "CFP franc"
+    }
+  },
+  "NER": {
+    "name": "Niger",
+    "official": "Republic of Niger",
+    "languages": [
+      "French"
+    ],
+    "currencies": {
+      "XOF": "West African CFA franc"
+    }
+  },
+  "NFK": {
+    "name": "Norfolk Island",
+    "official": "Territory of Norfolk Island",
+    "languages": [
+      "English",
+      "Norfuk"
+    ],
+    "currencies": {
+      "AUD": "Australian dollar"
+    }
+  },
+  "NGA": {
+    "name": "Nigeria",
+    "official": "Federal Republic of Nigeria",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "NGN": "Nigerian naira"
+    }
+  },
+  "NIC": {
+    "name": "Nicaragua",
+    "official": "Republic of Nicaragua",
+    "languages": [
+      "Spanish"
+    ],
+    "currencies": {
+      "NIO": "Nicaraguan córdoba"
+    }
+  },
+  "NIU": {
+    "name": "Niue",
+    "official": "Niue",
+    "languages": [
+      "English",
+      "Niuean"
+    ],
+    "currencies": {
+      "NZD": "New Zealand dollar"
+    }
+  },
+  "NLD": {
+    "name": "Netherlands",
+    "official": "Kingdom of the Netherlands",
+    "languages": [
+      "Dutch"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "NOR": {
+    "name": "Norway",
+    "official": "Kingdom of Norway",
+    "languages": [
+      "Norwegian Nynorsk",
+      "Norwegian Bokmål",
+      "Sami"
+    ],
+    "currencies": {
+      "NOK": "Norwegian krone"
+    }
+  },
+  "NPL": {
+    "name": "Nepal",
+    "official": "Federal Democratic Republic of Nepal",
+    "languages": [
+      "Nepali"
+    ],
+    "currencies": {
+      "NPR": "Nepalese rupee"
+    }
+  },
+  "NRU": {
+    "name": "Nauru",
+    "official": "Republic of Nauru",
+    "languages": [
+      "English",
+      "Nauru"
+    ],
+    "currencies": {
+      "AUD": "Australian dollar"
+    }
+  },
+  "NZL": {
+    "name": "New Zealand",
+    "official": "New Zealand",
+    "languages": [
+      "English",
+      "Māori",
+      "New Zealand Sign Language"
+    ],
+    "currencies": {
+      "NZD": "New Zealand dollar"
+    }
+  },
+  "OMN": {
+    "name": "Oman",
+    "official": "Sultanate of Oman",
+    "languages": [
+      "Arabic"
+    ],
+    "currencies": {
+      "OMR": "Omani rial"
+    }
+  },
+  "PAK": {
+    "name": "Pakistan",
+    "official": "Islamic Republic of Pakistan",
+    "languages": [
+      "English",
+      "Urdu"
+    ],
+    "currencies": {
+      "PKR": "Pakistani rupee"
+    }
+  },
+  "PAN": {
+    "name": "Panama",
+    "official": "Republic of Panama",
+    "languages": [
+      "Spanish"
+    ],
+    "currencies": {
+      "PAB": "Panamanian balboa",
+      "USD": "United States dollar"
+    }
+  },
+  "PCN": {
+    "name": "Pitcairn Islands",
+    "official": "Pitcairn Group of Islands",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "NZD": "New Zealand dollar"
+    }
+  },
+  "PER": {
+    "name": "Peru",
+    "official": "Republic of Peru",
+    "languages": [
+      "Aymara",
+      "Quechua",
+      "Spanish"
+    ],
+    "currencies": {
+      "PEN": "Peruvian sol"
+    }
+  },
+  "PHL": {
+    "name": "Philippines",
+    "official": "Republic of the Philippines",
+    "languages": [
+      "English",
+      "Filipino"
+    ],
+    "currencies": {
+      "PHP": "Philippine peso"
+    }
+  },
+  "PLW": {
+    "name": "Palau",
+    "official": "Republic of Palau",
+    "languages": [
+      "English",
+      "Palauan"
+    ],
+    "currencies": {
+      "USD": "United States dollar"
+    }
+  },
+  "PNG": {
+    "name": "Papua New Guinea",
+    "official": "Independent State of Papua New Guinea",
+    "languages": [
+      "English",
+      "Hiri Motu",
+      "Tok Pisin"
+    ],
+    "currencies": {
+      "PGK": "Papua New Guinean kina"
+    }
+  },
+  "POL": {
+    "name": "Poland",
+    "official": "Republic of Poland",
+    "languages": [
+      "Polish"
+    ],
+    "currencies": {
+      "PLN": "Polish złoty"
+    }
+  },
+  "PRI": {
+    "name": "Puerto Rico",
+    "official": "Commonwealth of Puerto Rico",
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "currencies": {
+      "USD": "United States dollar"
+    }
+  },
+  "PRK": {
+    "name": "North Korea",
+    "official": "Democratic People's Republic of Korea",
+    "languages": [
+      "Korean"
+    ],
+    "currencies": {
+      "KPW": "North Korean won"
+    }
+  },
+  "PRT": {
+    "name": "Portugal",
+    "official": "Portuguese Republic",
+    "languages": [
+      "Portuguese"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "PRY": {
+    "name": "Paraguay",
+    "official": "Republic of Paraguay",
+    "languages": [
+      "Guaraní",
+      "Spanish"
+    ],
+    "currencies": {
+      "PYG": "Paraguayan guaraní"
+    }
+  },
+  "PSX": {
+    "name": "Palestine",
+    "official": "State of Palestine",
+    "languages": [
+      "Arabic"
+    ],
+    "currencies": {
+      "EGP": "Egyptian pound",
+      "ILS": "Israeli new shekel",
+      "JOD": "Jordanian dinar"
+    }
+  },
+  "PYF": {
+    "name": "French Polynesia",
+    "official": "French Polynesia",
+    "languages": [
+      "French"
+    ],
+    "currencies": {
+      "XPF": "CFP franc"
+    }
+  },
+  "QAT": {
+    "name": "Qatar",
+    "official": "State of Qatar",
+    "languages": [
+      "Arabic"
+    ],
+    "currencies": {
+      "QAR": "Qatari riyal"
+    }
+  },
+  "REU": {
+    "name": "Réunion",
+    "official": "Réunion Island",
+    "languages": [
+      "French"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "ROU": {
+    "name": "Romania",
+    "official": "Romania",
+    "languages": [
+      "Romanian"
+    ],
+    "currencies": {
+      "RON": "Romanian leu"
+    }
+  },
+  "RUS": {
+    "name": "Russia",
+    "official": "Russian Federation",
+    "languages": [
+      "Russian"
+    ],
+    "currencies": {
+      "RUB": "Russian ruble"
+    }
+  },
+  "RWA": {
+    "name": "Rwanda",
+    "official": "Republic of Rwanda",
+    "languages": [
+      "English",
+      "French",
+      "Kinyarwanda"
+    ],
+    "currencies": {
+      "RWF": "Rwandan franc"
+    }
+  },
+  "SAU": {
+    "name": "Saudi Arabia",
+    "official": "Kingdom of Saudi Arabia",
+    "languages": [
+      "Arabic"
+    ],
+    "currencies": {
+      "SAR": "Saudi riyal"
+    }
+  },
+  "SDN": {
+    "name": "Sudan",
+    "official": "Republic of the Sudan",
+    "languages": [
+      "Arabic",
+      "English"
+    ],
+    "currencies": {
+      "SDG": "Sudanese pound"
+    }
+  },
+  "SEN": {
+    "name": "Senegal",
+    "official": "Republic of Senegal",
+    "languages": [
+      "French"
+    ],
+    "currencies": {
+      "XOF": "West African CFA franc"
+    }
+  },
+  "SGP": {
+    "name": "Singapore",
+    "official": "Republic of Singapore",
+    "languages": [
+      "English",
+      "Malay",
+      "Tamil",
+      "Chinese"
+    ],
+    "currencies": {
+      "SGD": "Singapore dollar"
+    }
+  },
+  "SGS": {
+    "name": "South Georgia",
+    "official": "South Georgia and the South Sandwich Islands",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "SHP": "Saint Helena pound"
+    }
+  },
+  "SJM": {
+    "name": "Svalbard and Jan Mayen",
+    "official": "Svalbard og Jan Mayen",
+    "languages": [
+      "Norwegian"
+    ],
+    "currencies": {
+      "NOK": "krone"
+    }
+  },
+  "SLB": {
+    "name": "Solomon Islands",
+    "official": "Solomon Islands",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "SBD": "Solomon Islands dollar"
+    }
+  },
+  "SLE": {
+    "name": "Sierra Leone",
+    "official": "Republic of Sierra Leone",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "SLE": "Sierra Leonean leone"
+    }
+  },
+  "SLV": {
+    "name": "El Salvador",
+    "official": "Republic of El Salvador",
+    "languages": [
+      "Spanish"
+    ],
+    "currencies": {
+      "USD": "United States dollar"
+    }
+  },
+  "SMR": {
+    "name": "San Marino",
+    "official": "Most Serene Republic of San Marino",
+    "languages": [
+      "Italian"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "SOM": {
+    "name": "Somalia",
+    "official": "Federal Republic of Somalia",
+    "languages": [
+      "Arabic",
+      "Somali"
+    ],
+    "currencies": {
+      "SOS": "Somali shilling"
+    }
+  },
+  "SPM": {
+    "name": "Saint Pierre and Miquelon",
+    "official": "Saint Pierre and Miquelon",
+    "languages": [
+      "French"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "SRB": {
+    "name": "Serbia",
+    "official": "Republic of Serbia",
+    "languages": [
+      "Serbian"
+    ],
+    "currencies": {
+      "RSD": "Serbian dinar"
+    }
+  },
+  "SDS": {
+    "name": "South Sudan",
+    "official": "Republic of South Sudan",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "SSP": "South Sudanese pound"
+    }
+  },
+  "STP": {
+    "name": "São Tomé and Príncipe",
+    "official": "Democratic Republic of São Tomé and Príncipe",
+    "languages": [
+      "Portuguese"
+    ],
+    "currencies": {
+      "STN": "São Tomé and Príncipe dobra"
+    }
+  },
+  "SUR": {
+    "name": "Suriname",
+    "official": "Republic of Suriname",
+    "languages": [
+      "Dutch"
+    ],
+    "currencies": {
+      "SRD": "Surinamese dollar"
+    }
+  },
+  "SVK": {
+    "name": "Slovakia",
+    "official": "Slovak Republic",
+    "languages": [
+      "Slovak"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "SVN": {
+    "name": "Slovenia",
+    "official": "Republic of Slovenia",
+    "languages": [
+      "Slovene"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "SWE": {
+    "name": "Sweden",
+    "official": "Kingdom of Sweden",
+    "languages": [
+      "Swedish"
+    ],
+    "currencies": {
+      "SEK": "Swedish krona"
+    }
+  },
+  "SWZ": {
+    "name": "Eswatini",
+    "official": "Kingdom of Eswatini",
+    "languages": [
+      "English",
+      "Swazi"
+    ],
+    "currencies": {
+      "SZL": "Swazi lilangeni",
+      "ZAR": "South African rand"
+    }
+  },
+  "SXM": {
+    "name": "Sint Maarten",
+    "official": "Sint Maarten",
+    "languages": [
+      "English",
+      "French",
+      "Dutch"
+    ],
+    "currencies": {
+      "XCG": "Caribbean guilder"
+    }
+  },
+  "SYC": {
+    "name": "Seychelles",
+    "official": "Republic of Seychelles",
+    "languages": [
+      "Seychellois Creole",
+      "English",
+      "French"
+    ],
+    "currencies": {
+      "SCR": "Seychellois rupee"
+    }
+  },
+  "SYR": {
+    "name": "Syria",
+    "official": "Syrian Arab Republic",
+    "languages": [
+      "Arabic"
+    ],
+    "currencies": {
+      "SYP": "Syrian pound"
+    }
+  },
+  "TCA": {
+    "name": "Turks and Caicos Islands",
+    "official": "Turks and Caicos Islands",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "USD": "United States dollar"
+    }
+  },
+  "TCD": {
+    "name": "Chad",
+    "official": "Republic of Chad",
+    "languages": [
+      "Arabic",
+      "French"
+    ],
+    "currencies": {
+      "XAF": "Central African CFA franc"
+    }
+  },
+  "TGO": {
+    "name": "Togo",
+    "official": "Togolese Republic",
+    "languages": [
+      "French"
+    ],
+    "currencies": {
+      "XOF": "West African CFA franc"
+    }
+  },
+  "THA": {
+    "name": "Thailand",
+    "official": "Kingdom of Thailand",
+    "languages": [
+      "Thai"
+    ],
+    "currencies": {
+      "THB": "Thai baht"
+    }
+  },
+  "TJK": {
+    "name": "Tajikistan",
+    "official": "Republic of Tajikistan",
+    "languages": [
+      "Russian",
+      "Tajik"
+    ],
+    "currencies": {
+      "TJS": "Tajikistani somoni"
+    }
+  },
+  "TKL": {
+    "name": "Tokelau",
+    "official": "Tokelau",
+    "languages": [
+      "English",
+      "Samoan",
+      "Tokelauan"
+    ],
+    "currencies": {
+      "NZD": "New Zealand dollar"
+    }
+  },
+  "TKM": {
+    "name": "Turkmenistan",
+    "official": "Turkmenistan",
+    "languages": [
+      "Russian",
+      "Turkmen"
+    ],
+    "currencies": {
+      "TMT": "Turkmenistan manat"
+    }
+  },
+  "TLS": {
+    "name": "Timor-Leste",
+    "official": "Democratic Republic of Timor-Leste",
+    "languages": [
+      "Portuguese",
+      "Tetum"
+    ],
+    "currencies": {
+      "USD": "United States dollar"
+    }
+  },
+  "TON": {
+    "name": "Tonga",
+    "official": "Kingdom of Tonga",
+    "languages": [
+      "English",
+      "Tongan"
+    ],
+    "currencies": {
+      "TOP": "Tongan paʻanga"
+    }
+  },
+  "TTO": {
+    "name": "Trinidad and Tobago",
+    "official": "Republic of Trinidad and Tobago",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "TTD": "Trinidad and Tobago dollar"
+    }
+  },
+  "TUN": {
+    "name": "Tunisia",
+    "official": "Tunisian Republic",
+    "languages": [
+      "Arabic"
+    ],
+    "currencies": {
+      "TND": "Tunisian dinar"
+    }
+  },
+  "TUR": {
+    "name": "Türkiye",
+    "official": "Republic of Türkiye",
+    "languages": [
+      "Turkish"
+    ],
+    "currencies": {
+      "TRY": "Turkish lira"
+    }
+  },
+  "TUV": {
+    "name": "Tuvalu",
+    "official": "Tuvalu",
+    "languages": [
+      "English",
+      "Tuvaluan"
+    ],
+    "currencies": {
+      "AUD": "Australian dollar",
+      "TVD": "Tuvaluan dollar"
+    }
+  },
+  "TWN": {
+    "name": "Taiwan",
+    "official": "Republic of China (Taiwan)",
+    "languages": [
+      "Chinese"
+    ],
+    "currencies": {
+      "TWD": "New Taiwan dollar"
+    }
+  },
+  "TZA": {
+    "name": "Tanzania",
+    "official": "United Republic of Tanzania",
+    "languages": [
+      "English",
+      "Swahili"
+    ],
+    "currencies": {
+      "TZS": "Tanzanian shilling"
+    }
+  },
+  "UGA": {
+    "name": "Uganda",
+    "official": "Republic of Uganda",
+    "languages": [
+      "English",
+      "Swahili"
+    ],
+    "currencies": {
+      "UGX": "Ugandan shilling"
+    }
+  },
+  "UKR": {
+    "name": "Ukraine",
+    "official": "Ukraine",
+    "languages": [
+      "Ukrainian"
+    ],
+    "currencies": {
+      "UAH": "Ukrainian hryvnia"
+    }
+  },
+  "UMI": {
+    "name": "United States Minor Outlying Islands",
+    "official": "United States Minor Outlying Islands",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "USD": "United States dollar"
+    }
+  },
+  "URY": {
+    "name": "Uruguay",
+    "official": "Oriental Republic of Uruguay",
+    "languages": [
+      "Spanish"
+    ],
+    "currencies": {
+      "UYU": "Uruguayan peso"
+    }
+  },
+  "USA": {
+    "name": "United States",
+    "official": "United States of America",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "USD": "United States dollar"
+    }
+  },
+  "UZB": {
+    "name": "Uzbekistan",
+    "official": "Republic of Uzbekistan",
+    "languages": [
+      "Russian",
+      "Uzbek"
+    ],
+    "currencies": {
+      "UZS": "Uzbekistani soʻm"
+    }
+  },
+  "VAT": {
+    "name": "Vatican City",
+    "official": "Vatican City State",
+    "languages": [
+      "Italian",
+      "Latin"
+    ],
+    "currencies": {
+      "EUR": "Euro"
+    }
+  },
+  "VCT": {
+    "name": "Saint Vincent and the Grenadines",
+    "official": "Saint Vincent and the Grenadines",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "XCD": "Eastern Caribbean dollar"
+    }
+  },
+  "VEN": {
+    "name": "Venezuela",
+    "official": "Bolivarian Republic of Venezuela",
+    "languages": [
+      "Spanish"
+    ],
+    "currencies": {
+      "VES": "Venezuelan bolívar soberano"
+    }
+  },
+  "VGB": {
+    "name": "British Virgin Islands",
+    "official": "Virgin Islands",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "USD": "United States dollar"
+    }
+  },
+  "VIR": {
+    "name": "United States Virgin Islands",
+    "official": "Virgin Islands of the United States",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "USD": "United States dollar"
+    }
+  },
+  "VNM": {
+    "name": "Vietnam",
+    "official": "Socialist Republic of Vietnam",
+    "languages": [
+      "Vietnamese"
+    ],
+    "currencies": {
+      "VND": "Vietnamese đồng"
+    }
+  },
+  "VUT": {
+    "name": "Vanuatu",
+    "official": "Republic of Vanuatu",
+    "languages": [
+      "Bislama",
+      "English",
+      "French"
+    ],
+    "currencies": {
+      "VUV": "Vanuatu vatu"
+    }
+  },
+  "WLF": {
+    "name": "Wallis and Futuna",
+    "official": "Territory of the Wallis and Futuna Islands",
+    "languages": [
+      "French"
+    ],
+    "currencies": {
+      "XPF": "CFP franc"
+    }
+  },
+  "WSM": {
+    "name": "Samoa",
+    "official": "Independent State of Samoa",
+    "languages": [
+      "English",
+      "Samoan"
+    ],
+    "currencies": {
+      "WST": "Samoan tālā"
+    }
+  },
+  "YEM": {
+    "name": "Yemen",
+    "official": "Republic of Yemen",
+    "languages": [
+      "Arabic"
+    ],
+    "currencies": {
+      "YER": "Yemeni rial"
+    }
+  },
+  "ZAF": {
+    "name": "South Africa",
+    "official": "Republic of South Africa",
+    "languages": [
+      "Afrikaans",
+      "English",
+      "Southern Ndebele",
+      "Northern Sotho",
+      "Southern Sotho",
+      "Swazi",
+      "Tswana",
+      "Tsonga",
+      "Venda",
+      "Xhosa",
+      "Zulu"
+    ],
+    "currencies": {
+      "ZAR": "South African rand"
+    }
+  },
+  "ZMB": {
+    "name": "Zambia",
+    "official": "Republic of Zambia",
+    "languages": [
+      "English"
+    ],
+    "currencies": {
+      "ZMW": "Zambian kwacha"
+    }
+  },
+  "ZWE": {
+    "name": "Zimbabwe",
+    "official": "Republic of Zimbabwe",
+    "languages": [
+      "Chibarwe",
+      "English",
+      "Kalanga",
+      "Khoisan",
+      "Ndau",
+      "Northern Ndebele",
+      "Chewa",
+      "Shona",
+      "Sotho",
+      "Tonga",
+      "Tswana",
+      "Tsonga",
+      "Venda",
+      "Xhosa",
+      "Zimbabwean Sign Language"
+    ],
+    "currencies": {
+      "BWP": "Botswana pula",
+      "CNY": "Chinese yuan",
+      "EUR": "Euro",
+      "GBP": "British pound",
+      "INR": "Indian rupee",
+      "JPY": "Japanese yen",
+      "USD": "United States dollar",
+      "ZAR": "South African rand",
+      "ZWG": "Zimbabwe Gold"
+    }
+  }
+}
