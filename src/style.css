@@ -73,25 +73,37 @@ body.mode-globe .boot {
   letter-spacing: -0.03em;
 }
 
-.modes {
-  display: flex;
-  padding: 3px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.06);
-}
-
-.modes button {
+.mode-toggle {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 38px;
+  height: 38px;
   border: 0;
-  border-radius: 9px;
-  padding: 7px 14px;
-  background: transparent;
-  color: #d7ddd4;
+  border-radius: 10px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.06);
+  color: #f4efe6;
   cursor: pointer;
 }
 
-.modes button[aria-pressed="true"] {
-  background: var(--paper);
-  color: var(--ink);
+.mode-toggle:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.mode-toggle svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+body.mode-globe .mode-toggle .icon-globe,
+body:not(.mode-globe) .mode-toggle .icon-map {
+  display: none;
 }
 
 .search {
@@ -114,7 +126,7 @@ body.mode-globe .boot {
 }
 
 .search input:focus,
-.modes button:focus-visible,
+.mode-toggle:focus-visible,
 .panel-bar button:focus-visible,
 .result button:focus-visible {
   outline: 2px solid #f0c14d;

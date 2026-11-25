@@ -49,8 +49,7 @@ const panelBody = document.querySelector("#panel-body");
 const boot = document.querySelector("#boot");
 const searchInput = document.querySelector("#country-search");
 const searchResults = document.querySelector("#search-results");
-const globeButton = document.querySelector("#mode-globe");
-const mapButton = document.querySelector("#mode-map");
+const modeButton = document.querySelector("#mode-toggle");
 
 const featuresById = new Map();
 let searchIndex = [];
@@ -141,8 +140,7 @@ map.on("load", async () => {
   }
 });
 
-globeButton.addEventListener("click", () => setMode("globe"));
-mapButton.addEventListener("click", () => setMode("map"));
+modeButton.addEventListener("click", () => setMode(mode === "globe" ? "map" : "globe"));
 document.querySelector("#panel-close").addEventListener("click", closePanel);
 searchInput.addEventListener("input", () => showMatches(searchInput.value));
 searchInput.addEventListener("keydown", onSearchKeydown);
@@ -214,8 +212,9 @@ function mulberry32(seed) {
 function setMode(next) {
   if (next === mode) return;
   mode = next;
-  globeButton.setAttribute("aria-pressed", String(next === "globe"));
-  mapButton.setAttribute("aria-pressed", String(next === "map"));
+  const label = next === "globe" ? "Afficher la carte" : "Afficher le globe";
+  modeButton.setAttribute("aria-label", label);
+  modeButton.title = label;
   document.body.classList.toggle("mode-globe", next === "globe");
 
   if (next === "globe") {
