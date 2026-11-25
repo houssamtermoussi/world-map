@@ -207,7 +207,7 @@ const map = new MapLibreMap({
   renderWorldCopies: false,
 });
 
-const geoPromise = fetch("/countries.geojson").then((response) => {
+const geoPromise = fetch(`${import.meta.env.BASE_URL}countries.geojson`).then((response) => {
   if (!response.ok) throw new Error("Impossible de charger les frontières.");
   return response.json();
 });
@@ -616,7 +616,7 @@ function geometryBounds(geometry) {
 
 function loadProfiles() {
   if (!profilesPromise) {
-    profilesPromise = fetch("/profiles.json")
+    profilesPromise = fetch(`${import.meta.env.BASE_URL}profiles.json`)
       .then((response) => {
         if (!response.ok) throw new Error("Impossible de charger les fiches.");
         return response.json();
