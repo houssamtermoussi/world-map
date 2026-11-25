@@ -48,14 +48,24 @@ body.mode-globe .boot {
 }
 
 .mode-toggle,
+.compass,
+.search input {
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(214, 234, 246, 0.48)),
+    rgba(236, 246, 252, 0.34);
+  color: #1a3344;
+  box-shadow:
+    0 12px 32px rgba(4, 16, 28, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -12px 18px rgba(176, 210, 228, 0.22);
+  backdrop-filter: blur(18px) saturate(1.5);
+}
+
+.mode-toggle,
 .compass {
   position: absolute;
   z-index: 2;
-  border: 1px solid var(--line);
-  background: rgba(8, 16, 24, 0.82);
-  color: #f4efe6;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
-  backdrop-filter: blur(16px);
   cursor: pointer;
 }
 
@@ -81,17 +91,12 @@ body.mode-globe .boot {
 
 .search input {
   width: 100%;
-  border: 1px solid var(--line);
   border-radius: 999px;
   padding: 12px 18px;
-  background: rgba(8, 16, 24, 0.82);
-  color: #f4efe6;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
-  backdrop-filter: blur(16px);
 }
 
 .search input::placeholder {
-  color: #b7c0b8;
+  color: rgba(26, 51, 68, 0.48);
 }
 
 #search-results {
@@ -145,8 +150,11 @@ body.panel-open .search {
 }
 
 .mode-toggle:hover,
-.compass:hover {
-  background: rgba(16, 28, 40, 0.92);
+.compass:hover,
+.search input:hover {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(226, 242, 250, 0.58)),
+    rgba(244, 250, 255, 0.42);
 }
 
 .mode-toggle svg {
@@ -195,7 +203,7 @@ body:not(.mode-globe) .mode-toggle .icon-map {
   width: 100%;
   height: 100%;
   fill: none;
-  stroke: rgba(255, 255, 255, 0.28);
+  stroke: rgba(26, 51, 68, 0.32);
   stroke-width: 1.4;
   stroke-linecap: round;
 }
@@ -206,17 +214,17 @@ body:not(.mode-globe) .mode-toggle .icon-map {
 }
 
 .compass .needle-s {
-  fill: rgba(244, 239, 230, 0.72);
+  fill: rgba(26, 51, 68, 0.45);
   stroke: none;
 }
 
 .compass .hub {
-  fill: #f4efe6;
+  fill: #1a3344;
   stroke: none;
 }
 
 .compass text {
-  fill: rgba(244, 239, 230, 0.72);
+  fill: rgba(26, 51, 68, 0.7);
   stroke: none;
   font-family: Outfit, "Segoe UI", sans-serif;
   font-size: 9px;
