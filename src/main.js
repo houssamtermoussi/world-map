@@ -209,14 +209,24 @@ function fitWorld() {
 }
 
 function bindMapEvents() {
+  let moving = false;
+
+  map.on("movestart", () => {
+    moving = true;
+    map.getCanvas().style.cursor = "";
+    clearHover();
+  });
+  map.on("moveend", () => {
+    moving = false;
+  });
+
   map.on("mousemove", (event) => {
+    if (moving) return;
     const hits = map.queryRenderedFeatures(event.point, { layers: ["countries-fill"] });
     const next = hits[0]?.id ?? null;
     map.getCanvas().style.cursor = next == null ? "" : "pointer";
     if (next === hoveredId) return;
-    if (hoveredId != null) {
-      map.setFeatureState({ source: "countries", id: hoveredId }, { hover: false });
-    }
+    clearHover();
     hoveredId = next;
     if (hoveredId != null) {
       map.setFeatureState({ source: "countries", id: hoveredId }, { hover: true });
@@ -225,9 +235,7 @@ function bindMapEvents() {
 
   map.on("mouseout", () => {
     map.getCanvas().style.cursor = "";
-    if (hoveredId == null) return;
-    map.setFeatureState({ source: "countries", id: hoveredId }, { hover: false });
-    hoveredId = null;
+    clearHover();
   });
 
   map.on("click", (event) => {
@@ -239,6 +247,12 @@ function bindMapEvents() {
     }
     openCountry(featuresById.get(feature.id) || feature);
   });
+}
+
+function clearHover() {
+  if (hoveredId == null) return;
+  map.setFeatureState({ source: "countries", id: hoveredId }, { hover: false });
+  hoveredId = null;
 }
 
 function countryAt(point) {
