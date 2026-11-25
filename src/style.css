@@ -51,8 +51,6 @@ body.mode-globe .boot {
 .compass {
   position: absolute;
   z-index: 2;
-  left: 50%;
-  translate: -50% 0;
   border: 1px solid var(--line);
   background: rgba(8, 16, 24, 0.82);
   color: #f4efe6;
@@ -63,12 +61,87 @@ body.mode-globe .boot {
 
 .mode-toggle {
   top: 16px;
+  left: 16px;
   display: grid;
   place-items: center;
   width: 46px;
   height: 46px;
   border-radius: 50%;
   padding: 0;
+}
+
+.search {
+  position: absolute;
+  z-index: 2;
+  top: 16px;
+  left: 50%;
+  width: min(420px, calc(100vw - 180px));
+  translate: -50% 0;
+}
+
+.search input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 12px 18px;
+  background: rgba(8, 16, 24, 0.82);
+  color: #f4efe6;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(16px);
+}
+
+.search input::placeholder {
+  color: #b7c0b8;
+}
+
+#search-results {
+  position: absolute;
+  z-index: 4;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  max-height: 280px;
+  margin: 0;
+  padding: 6px;
+  overflow: auto;
+  list-style: none;
+  border-radius: 12px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+}
+
+.result button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.result[aria-selected="true"] button,
+.result button:hover {
+  background: var(--paper-deep);
+}
+
+.result small {
+  color: var(--muted);
+}
+
+.empty {
+  padding: 8px 10px;
+  color: var(--muted);
+}
+
+body.panel-open .search {
+  left: calc((100vw - 372px) / 2);
+  width: min(420px, calc(100vw - 520px));
 }
 
 .mode-toggle:hover,
@@ -91,15 +164,18 @@ body:not(.mode-globe) .mode-toggle .icon-map {
   display: none;
 }
 
+.search input:focus,
 .mode-toggle:focus-visible,
 .compass:focus-visible,
-.panel-bar button:focus-visible {
+.panel-bar button:focus-visible,
+.result button:focus-visible {
   outline: 2px solid #f0c14d;
   outline-offset: 2px;
 }
 
 .compass {
   bottom: 22px;
+  left: 16px;
   width: 84px;
   height: 84px;
   border-radius: 50%;
@@ -152,6 +228,7 @@ body:not(.mode-globe) .mode-toggle .icon-map {
   fill: #f0c14d;
 }
 
+#search-results[hidden],
 .panel[hidden],
 .boot[hidden] {
   display: none !important;
@@ -285,19 +362,24 @@ body.panel-open .maplibregl-ctrl-bottom-right {
   right: 372px;
 }
 
-@media (min-width: 761px) {
-  body.panel-open .compass {
-    left: calc((100vw - 372px) / 2);
-  }
-}
-
 @media (max-width: 760px) {
   .mode-toggle {
     top: 12px;
+    left: 12px;
+  }
+
+  .search,
+  body.panel-open .search {
+    top: 12px;
+    right: 12px;
+    left: 70px;
+    width: auto;
+    translate: none;
   }
 
   .compass {
-    bottom: 58px;
+    bottom: 16px;
+    left: 12px;
   }
 
   .panel {
@@ -310,18 +392,11 @@ body.panel-open .maplibregl-ctrl-bottom-right {
     border-radius: 18px 18px 0 0;
   }
 
-  .maplibregl-ctrl-bottom-right {
-    right: auto;
-    left: 8px;
-  }
-
   body.panel-open .compass {
-    bottom: calc(48vh + 58px);
+    bottom: calc(48vh + 16px);
   }
 
   body.panel-open .maplibregl-ctrl-bottom-right {
-    right: auto;
-    left: 8px;
     bottom: calc(48vh + 8px);
   }
 

@@ -14,6 +14,20 @@
   <body class="mode-globe">
     <div id="app">
       <div id="map"></div>
+      <div class="search">
+        <label class="sr-only" for="country-search">Rechercher un pays</label>
+        <input
+          id="country-search"
+          type="search"
+          placeholder="Rechercher un pays"
+          autocomplete="off"
+          role="combobox"
+          aria-expanded="false"
+          aria-controls="search-results"
+          aria-autocomplete="list"
+        />
+        <ul id="search-results" role="listbox" hidden></ul>
+      </div>
       <button type="button" id="mode-toggle" class="mode-toggle" aria-label="Afficher la carte" title="Afficher la carte">
         <svg class="icon-map" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M9 4.5 3.5 6.2v13.3L9 17.8l6 1.7 5.5-1.7V4.5L15 6.2 9 4.5Z" />
