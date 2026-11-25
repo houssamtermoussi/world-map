@@ -47,19 +47,17 @@ const motion = (ms) => (reduceMotion ? 0 : ms);
 const panel = document.querySelector("#panel");
 const panelBody = document.querySelector("#panel-body");
 const boot = document.querySelector("#boot");
-const searchInput = document.querySelector("#country-search");
-const searchResults = document.querySelector("#search-results");
 const modeButton = document.querySelector("#mode-toggle");
+const compass = document.querySelector("#compass");
+const compassRose = document.querySelector("#compass-rose");
 
 const featuresById = new Map();
-let searchIndex = [];
 let mode = "globe";
 let hoveredId = null;
 let selectedId = null;
 let selectedFeature = null;
 let requestToken = 0;
 let profilesPromise = null;
-let activeResult = -1;
 
 const map = new MapLibreMap({
   container: "map",
@@ -100,7 +98,6 @@ map.on("load", async () => {
       feature.id = index + 1;
       featuresById.set(feature.id, feature);
     });
-    searchIndex = buildSearchIndex(data.features);
     map.addSource("countries", { type: "geojson", data });
     map.addLayer({
       id: "countries-fill",
@@ -141,21 +138,14 @@ map.on("load", async () => {
 });
 
 modeButton.addEventListener("click", () => setMode(mode === "globe" ? "map" : "globe"));
+compass.addEventListener("click", resetNorth);
 document.querySelector("#panel-close").addEventListener("click", closePanel);
-searchInput.addEventListener("input", () => showMatches(searchInput.value));
-searchInput.addEventListener("keydown", onSearchKeydown);
-searchResults.addEventListener("mousedown", (event) => event.preventDefault());
-document.addEventListener("pointerdown", (event) => {
-  if (!event.target.closest(".search")) hideResults();
-});
 document.addEventListener("keydown", (event) => {
-  if (event.key !== "Escape") return;
-  if (!searchResults.hidden) {
-    hideResults();
-    return;
-  }
-  if (!panel.hidden) closePanel();
+  if (event.key === "Escape" && !panel.hidden) closePanel();
 });
+map.on("rotate", syncCompass);
+map.on("pitch", syncCompass);
+syncCompass();
 
 function paintSpace() {
   const width = 1600;
@@ -248,6 +238,24 @@ function setMode(next) {
   fitWorld();
 }
 
+function syncCompass() {
+  const bearing = map.getBearing();
+  const pitch = map.getPitch() * 0.45;
+  compassRose.style.transform = `rotateX(${pitch}deg) rotateZ(${-bearing}deg)`;
+}
+
+function resetNorth() {
+  const bearing = map.getBearing();
+  const pitch = map.getPitch();
+  if (Math.abs(bearing) < 0.5 && pitch < 0.5) return;
+  map.easeTo({
+    bearing: 0,
+    pitch: 0,
+    duration: motion(500),
+    essential: true,
+  });
+}
+
 function fitWorld() {
   map.fitBounds(
     [
@@ -293,7 +301,6 @@ function bindMapEvents() {
   });
 
   map.on("click", (event) => {
-    hideResults();
     const feature = countryAt(event.point);
     if (!feature) {
       closePanel();
@@ -407,13 +414,13 @@ function viewPadding() {
   const open = !panel.hidden;
   if (narrow) {
     return {
-      top: 96,
+      top: 72,
       left: 16,
       right: 16,
-      bottom: open ? Math.round(window.innerHeight * 0.42) : 28,
+      bottom: open ? Math.round(window.innerHeight * 0.48) + 150 : 156,
     };
   }
-  return { top: 76, left: 20, right: open ? 380 : 20, bottom: 28 };
+  return { top: 72, left: 20, right: open ? 380 : 20, bottom: 120 };
 }
 
 function geometryBounds(geometry) {
@@ -539,138 +546,3 @@ function addFact(list, label, value) {
   list.append(term, detail);
 }
 
-function buildSearchIndex(features) {
-  return features
-    .map((feature) => {
-      const props = feature.properties;
-      const label = props.NAME_FR || props.NAME;
-      const aliases = [
-        label,
-        props.NAME,
-        props.NAME_EN,
-        props.NAME_LONG,
-        props.FORMAL_FR,
-        props.ISO_A2,
-        props.ISO_A3,
-        props.ADM0_A3,
-      ].filter((value) => value && value !== "-99");
-      return {
-        id: feature.id,
-        feature,
-        label,
-        detail: props.NAME && normalize(props.NAME) !== normalize(label) ? props.NAME : "",
-        aliases: [...new Set(aliases.map(normalize).filter(Boolean))],
-      };
-    })
-    .sort((a, b) => a.label.localeCompare(b.label, "fr"));
-}
-
-function showMatches(rawQuery) {
-  const query = normalize(rawQuery);
-  activeResult = -1;
-  if (!query) {
-    hideResults();
-    return;
-  }
-  const matches = searchCountries(query);
-  searchResults.replaceChildren();
-  if (!matches.length) {
-    const empty = document.createElement("li");
-    empty.className = "empty";
-    empty.textContent = "Aucun pays trouvé";
-    searchResults.append(empty);
-  } else {
-    matches.forEach((entry, index) => {
-      const item = document.createElement("li");
-      item.className = "result";
-      item.id = `search-result-${index}`;
-      item.setAttribute("role", "option");
-      const button = document.createElement("button");
-      button.type = "button";
-      const name = document.createElement("span");
-      name.textContent = entry.label;
-      button.append(name);
-      if (entry.detail) {
-        const detail = document.createElement("small");
-        detail.textContent = entry.detail;
-        button.append(detail);
-      }
-      button.addEventListener("click", () => chooseResult(entry));
-      item.append(button);
-      searchResults.append(item);
-    });
-  }
-  searchResults.hidden = false;
-  searchInput.setAttribute("aria-expanded", "true");
-  searchInput.removeAttribute("aria-activedescendant");
-}
-
-function searchCountries(query) {
-  const ranked = [];
-  for (const entry of searchIndex) {
-    let best = Infinity;
-    for (const alias of entry.aliases) {
-      if (alias === query) best = Math.min(best, 0);
-      else if (alias.startsWith(query)) best = Math.min(best, 1);
-      else if (alias.includes(query)) best = Math.min(best, 2);
-    }
-    if (best < Infinity) ranked.push({ entry, best });
-  }
-  ranked.sort((a, b) => a.best - b.best || a.entry.label.localeCompare(b.entry.label, "fr"));
-  return ranked.slice(0, 8).map((row) => row.entry);
-}
-
-function chooseResult(entry) {
-  searchInput.value = entry.label;
-  hideResults();
-  openCountry(entry.feature);
-}
-
-function hideResults() {
-  searchResults.hidden = true;
-  searchResults.replaceChildren();
-  searchInput.setAttribute("aria-expanded", "false");
-  searchInput.removeAttribute("aria-activedescendant");
-  activeResult = -1;
-}
-
-function onSearchKeydown(event) {
-  const options = [...searchResults.querySelectorAll(".result")];
-  if (event.key === "ArrowDown" || event.key === "ArrowUp") {
-    if (!options.length) return;
-    event.preventDefault();
-    if (searchResults.hidden) showMatches(searchInput.value);
-    const nextOptions = [...searchResults.querySelectorAll(".result")];
-    if (!nextOptions.length) return;
-    const direction = event.key === "ArrowDown" ? 1 : -1;
-    activeResult = (activeResult + direction + nextOptions.length) % nextOptions.length;
-    nextOptions.forEach((option, index) => {
-      option.setAttribute("aria-selected", String(index === activeResult));
-    });
-    const current = nextOptions[activeResult];
-    searchInput.setAttribute("aria-activedescendant", current.id);
-    current.scrollIntoView({ block: "nearest" });
-    return;
-  }
-  if (event.key === "Enter") {
-    const matches = searchCountries(normalize(searchInput.value));
-    const chosen = matches[activeResult] || matches[0];
-    if (!chosen) return;
-    event.preventDefault();
-    chooseResult(chosen);
-    return;
-  }
-  if (event.key === "Escape") {
-    hideResults();
-  }
-}
-
-function normalize(value) {
-  return String(value)
-    .normalize("NFD")
-    .replace(/\p{M}/gu, "")
-    .replace(/['’]/g, " ")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, " ")
-    .trim();
-}

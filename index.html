@@ -14,34 +14,33 @@
   <body class="mode-globe">
     <div id="app">
       <div id="map"></div>
-      <header class="toolbar">
-        <p class="brand">Monde</p>
-        <button type="button" id="mode-toggle" class="mode-toggle" aria-label="Afficher la carte" title="Afficher la carte">
-          <svg class="icon-map" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M9 4.5 3.5 6.2v13.3L9 17.8l6 1.7 5.5-1.7V4.5L15 6.2 9 4.5Z" />
-            <path d="M9 4.5v13.3M15 6.2v13.3" />
+      <button type="button" id="mode-toggle" class="mode-toggle" aria-label="Afficher la carte" title="Afficher la carte">
+        <svg class="icon-map" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M9 4.5 3.5 6.2v13.3L9 17.8l6 1.7 5.5-1.7V4.5L15 6.2 9 4.5Z" />
+          <path d="M9 4.5v13.3M15 6.2v13.3" />
+        </svg>
+        <svg class="icon-globe" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="8.25" />
+          <ellipse cx="12" cy="12" rx="3.6" ry="8.25" />
+          <path d="M3.75 12h16.5M5.4 7.6h13.2M5.4 16.4h13.2" />
+        </svg>
+      </button>
+      <button type="button" id="compass" class="compass" aria-label="Revenir au nord" title="Nord">
+        <span id="compass-rose" class="compass-rose">
+          <svg viewBox="0 0 80 80" aria-hidden="true">
+            <circle cx="40" cy="40" r="31" />
+            <circle cx="40" cy="40" r="23" />
+            <path d="M40 7.5v5.5M40 67v5.5M7.5 40h5.5M67 40h5.5" />
+            <path class="needle-n" d="M40 20.5 45.4 40 40 36.4 34.6 40Z" />
+            <path class="needle-s" d="M40 59.5 34.6 40 40 43.6 45.4 40Z" />
+            <circle class="hub" cx="40" cy="40" r="2.5" />
+            <text class="mark-n" x="40" y="16.5">N</text>
+            <text class="mark" x="67" y="42.5">E</text>
+            <text class="mark" x="40" y="71">S</text>
+            <text class="mark" x="13" y="42.5">O</text>
           </svg>
-          <svg class="icon-globe" viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="8.25" />
-            <ellipse cx="12" cy="12" rx="3.6" ry="8.25" />
-            <path d="M3.75 12h16.5M5.4 7.6h13.2M5.4 16.4h13.2" />
-          </svg>
-        </button>
-        <div class="search">
-          <label class="sr-only" for="country-search">Rechercher un pays</label>
-          <input
-            id="country-search"
-            type="search"
-            placeholder="Rechercher un pays"
-            autocomplete="off"
-            role="combobox"
-            aria-expanded="false"
-            aria-controls="search-results"
-            aria-autocomplete="list"
-          />
-          <ul id="search-results" role="listbox" hidden></ul>
-        </div>
-      </header>
+        </span>
+      </button>
       <aside id="panel" class="panel" hidden aria-labelledby="panel-title">
         <div class="panel-bar">
           <button type="button" id="panel-close" aria-label="Fermer la fiche">×</button>

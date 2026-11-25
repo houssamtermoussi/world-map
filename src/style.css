@@ -47,48 +47,33 @@ body.mode-globe .boot {
   background-size: cover;
 }
 
-.toolbar {
+.mode-toggle,
+.compass {
   position: absolute;
   z-index: 2;
-  top: 16px;
-  left: 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  max-width: min(560px, calc(100vw - 32px));
-  padding: 8px;
+  left: 50%;
+  translate: -50% 0;
   border: 1px solid var(--line);
-  border-radius: 16px;
   background: rgba(8, 16, 24, 0.82);
+  color: #f4efe6;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
   backdrop-filter: blur(16px);
-}
-
-.brand {
-  margin: 0;
-  padding: 0 8px 0 6px;
-  font-family: Fraunces, Georgia, serif;
-  font-size: 1.25rem;
-  font-weight: 650;
-  letter-spacing: -0.03em;
-}
-
-.mode-toggle {
-  display: grid;
-  place-items: center;
-  flex: none;
-  width: 38px;
-  height: 38px;
-  border: 0;
-  border-radius: 10px;
-  padding: 0;
-  background: rgba(255, 255, 255, 0.06);
-  color: #f4efe6;
   cursor: pointer;
 }
 
-.mode-toggle:hover {
-  background: rgba(255, 255, 255, 0.14);
+.mode-toggle {
+  top: 16px;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.mode-toggle:hover,
+.compass:hover {
+  background: rgba(16, 28, 40, 0.92);
 }
 
 .mode-toggle svg {
@@ -106,82 +91,70 @@ body:not(.mode-globe) .mode-toggle .icon-map {
   display: none;
 }
 
-.search {
-  position: relative;
-  flex: 1;
-  min-width: 160px;
-}
-
-.search input {
-  width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 8px 12px;
-  background: rgba(255, 255, 255, 0.06);
-  color: #f4efe6;
-}
-
-.search input::placeholder {
-  color: #b7c0b8;
-}
-
-.search input:focus,
 .mode-toggle:focus-visible,
-.panel-bar button:focus-visible,
-.result button:focus-visible {
+.compass:focus-visible,
+.panel-bar button:focus-visible {
   outline: 2px solid #f0c14d;
   outline-offset: 2px;
 }
 
-#search-results {
-  position: absolute;
-  z-index: 4;
-  top: calc(100% + 8px);
-  left: 0;
-  right: 0;
-  max-height: 280px;
-  margin: 0;
-  padding: 6px;
-  overflow: auto;
-  list-style: none;
-  border-radius: 12px;
-  background: var(--paper);
-  color: var(--ink);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+.compass {
+  bottom: 22px;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  padding: 0;
+  perspective: 220px;
 }
 
-#search-results[hidden],
+.compass-rose {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+}
+
+.compass svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.28);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+
+.compass .needle-n {
+  fill: #f0c14d;
+  stroke: none;
+}
+
+.compass .needle-s {
+  fill: rgba(244, 239, 230, 0.72);
+  stroke: none;
+}
+
+.compass .hub {
+  fill: #f4efe6;
+  stroke: none;
+}
+
+.compass text {
+  fill: rgba(244, 239, 230, 0.72);
+  stroke: none;
+  font-family: Outfit, "Segoe UI", sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  text-anchor: middle;
+}
+
+.compass .mark-n {
+  fill: #f0c14d;
+}
+
 .panel[hidden],
 .boot[hidden] {
   display: none !important;
-}
-
-.result button {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  border: 0;
-  border-radius: 8px;
-  padding: 8px 10px;
-  background: transparent;
-  color: inherit;
-  text-align: left;
-  cursor: pointer;
-}
-
-.result[aria-selected="true"] button,
-.result button:hover {
-  background: var(--paper-deep);
-}
-
-.result small {
-  color: var(--muted);
-}
-
-.empty {
-  padding: 8px 10px;
-  color: var(--muted);
 }
 
 .panel {
@@ -312,23 +285,19 @@ body.panel-open .maplibregl-ctrl-bottom-right {
   right: 372px;
 }
 
-@media (max-width: 1100px) {
-  body.panel-open .toolbar {
-    max-width: calc(100vw - 390px);
+@media (min-width: 761px) {
+  body.panel-open .compass {
+    left: calc((100vw - 372px) / 2);
   }
 }
 
 @media (max-width: 760px) {
-  .toolbar {
+  .mode-toggle {
     top: 12px;
-    right: 12px;
-    left: 12px;
-    max-width: none;
-    flex-wrap: wrap;
   }
 
-  .search {
-    flex-basis: 100%;
+  .compass {
+    bottom: 58px;
   }
 
   .panel {
@@ -341,12 +310,18 @@ body.panel-open .maplibregl-ctrl-bottom-right {
     border-radius: 18px 18px 0 0;
   }
 
-  body.panel-open .toolbar {
-    max-width: none;
+  .maplibregl-ctrl-bottom-right {
+    right: auto;
+    left: 8px;
+  }
+
+  body.panel-open .compass {
+    bottom: calc(48vh + 58px);
   }
 
   body.panel-open .maplibregl-ctrl-bottom-right {
-    right: 8px;
+    right: auto;
+    left: 8px;
     bottom: calc(48vh + 8px);
   }
 
