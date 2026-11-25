@@ -33,8 +33,8 @@ const globeSky = {
 };
 
 const flatSky = {
-  "sky-color": "#071018",
-  "horizon-color": "#071018",
+  "sky-color": "#1a78a8",
+  "horizon-color": "#1a78a8",
   "atmosphere-blend": 0,
 };
 
@@ -71,7 +71,7 @@ const map = new MapLibreMap({
       {
         id: "background",
         type: "background",
-        paint: { "background-color": "#071018" },
+        paint: { "background-color": "#1a78a8" },
       },
     ],
   },
