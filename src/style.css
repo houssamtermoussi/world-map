@@ -38,8 +38,13 @@ input {
 }
 
 body.mode-globe,
-body.mode-globe #map {
-  background: #fff;
+body.mode-globe #map,
+body.mode-globe .boot {
+  background-color: #02040a;
+  background-image: var(--space);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .toolbar {

@@ -26,11 +26,13 @@ const LAND = [
 ];
 
 const globeSky = {
-  "sky-color": "#ffffff",
-  "horizon-color": "#ffffff",
+  "sky-color": "transparent",
+  "horizon-color": "transparent",
   "sky-horizon-blend": 0,
-  "atmosphere-blend": ["interpolate", ["linear"], ["zoom"], 0, 0.95, 3, 0.7, 5, 0.2],
+  "atmosphere-blend": ["interpolate", ["linear"], ["zoom"], 0, 1, 3, 0.75, 5, 0.15],
 };
+
+paintSpace();
 
 const flatSky = {
   "sky-color": "#1a78a8",
@@ -156,6 +158,58 @@ document.addEventListener("keydown", (event) => {
   }
   if (!panel.hidden) closePanel();
 });
+
+function paintSpace() {
+  const width = 1600;
+  const height = 900;
+  const canvas = document.createElement("canvas");
+  canvas.width = width;
+  canvas.height = height;
+  const ctx = canvas.getContext("2d");
+  const random = mulberry32(20261125);
+
+  const wash = ctx.createRadialGradient(width * 0.5, height * 0.42, 40, width * 0.5, height * 0.5, width * 0.75);
+  wash.addColorStop(0, "#121c36");
+  wash.addColorStop(0.5, "#070c18");
+  wash.addColorStop(1, "#02040a");
+  ctx.fillStyle = wash;
+  ctx.fillRect(0, 0, width, height);
+
+  for (let index = 0; index < 1600; index += 1) {
+    drawStar(ctx, random() * width, random() * height, random);
+  }
+
+  for (let index = 0; index < 700; index += 1) {
+    const x = random() * width;
+    const y = height * 0.62 + (x - width * 0.5) * 0.42 + (random() - 0.5) * 150;
+    drawStar(ctx, x, y, random, 0.35);
+  }
+
+  document.documentElement.style.setProperty("--space", `url("${canvas.toDataURL()}")`);
+}
+
+function drawStar(ctx, x, y, random, minimumAlpha = 0) {
+  const roll = random();
+  const size = roll > 0.992 ? 2 : 1;
+  const alpha = Math.max(minimumAlpha, 0.35 + random() * 0.65);
+  const tint = random();
+  ctx.fillStyle = tint > 0.94 ? `rgba(255, 214, 170, ${alpha})` : tint > 0.88 ? `rgba(186, 214, 255, ${alpha})` : `rgba(255, 255, 255, ${alpha})`;
+  ctx.fillRect(x, y, size, size);
+  if (size === 2) {
+    ctx.fillStyle = `rgba(255, 255, 255, ${alpha * 0.45})`;
+    ctx.fillRect(x - 2, y, 6, 1);
+    ctx.fillRect(x, y - 2, 1, 6);
+  }
+}
+
+function mulberry32(seed) {
+  return () => {
+    seed = (seed + 0x6d2b79f5) | 0;
+    let value = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    value = (value + Math.imul(value ^ (value >>> 7), 61 | value)) ^ value;
+    return ((value ^ (value >>> 14)) >>> 0) / 4294967296;
+  };
+}
 
 function setMode(next) {
   if (next === mode) return;
